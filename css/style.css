@@ -1,0 +1,810 @@
+/*Стандартное обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*Дополнительное настройки*/
+.menu a{text-decoration: none;}
+.menu li{list-style: none;}
+/*Конец дополнительных настроек*/
+
+body {
+    /* гугл шрифт 400 и 700 */
+    font-family: 'Inter', sans-serif;
+}
+.wrapper {
+    
+}
+
+.full-screen {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* padding: 50px 15px; */
+
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.full-screen__body {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex: 1 1 auto;
+    text-align: center;
+    flex-direction: column;
+    background-color: rgba(2, 2, 2, 0.237);
+}
+
+/*Видео-фон*/
+.full-screen__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*Конец видео-фона*/
+
+/*Меню-навигация*/
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* position: absolute; */
+    width: 100%;
+    height: 60px;
+    font-weight: 700;
+
+    background: #2F71A3;
+    border-bottom: 1px solid #1C4B6F;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1;
+}
+
+.header__logo {
+    position: relative;
+    width: 40px;
+    left: 37%;
+    z-index: 1;
+}
+.menu__icon {
+    display: none;
+}
+@media (min-width: 767px) {
+    .menu__list {
+        display: flex;
+        font-size: 16px;
+        gap: 75px;
+    }
+    .menu__list>li {
+        margin: 0px 10px 0px 0px;
+        position: relative;
+    }
+}
+/* .menu__list {
+    display: flex;
+    font-size: 16px;
+    gap: 75px;
+} */
+/* .menu__list>li {
+    margin: 0px 10px 0px 0px;
+    position: relative;
+} */
+.menu__list>li:hover .sub-menu__list {
+    display: block;
+}
+
+
+
+/* @media (max-width: 767px) {
+    .menu__icon {
+        z-index: 5;
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 18px;
+        cursor: pointer;
+    }
+    .menu__icon span,
+    .menu__icon::before,
+    .menu__icon::after {
+        left: 0;
+        position: absolute;
+        height: 10%;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #fff;
+    }
+    .menu__icon::before,
+    .menu__icon::after {
+        content: "";
+    }
+    .menu__icon::before {
+        top: 0;
+    }
+    .menu__icon::after {
+        bottom: 0;
+    }
+    .menu__icon span {
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(16, 16, 16, 0.881);
+        transition: left 0.3s ease 0s;
+    }
+    .menu__list > li {
+        margin: 0px 0px 30px 0px;
+    }
+    .menu__list > li:last-child {
+        margin-bottom: 0;
+    }
+    .menu__link {
+        font-size: 24px;
+    }
+} */
+
+
+
+
+
+
+.menu__link {
+    color: white;
+    position: relative;
+}
+.menu__link:hover {
+    /* border-bottom: solid white 1px; */
+    color: #FFFFFF;
+}
+.menu__link:hover::before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+}
+.menu__link::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transition: transform 0.33s;
+}
+
+
+
+
+
+
+
+
+
+
+.sub-menu__list {
+    display: none;
+    position: absolute;
+    padding: 20px 0px 0px 0px;
+    background: rgba(47, 113, 163, 0.73);
+    backdrop-filter: blur(10px);
+    text-transform: initial;
+
+    /* вопрос насчёт такого решения */
+    right: -38px;
+}
+.sub-menu__list>li {
+    align-items: center;
+    display: flex;
+
+    padding: 0px 0px 0px 10px;
+
+    width: 250px;
+    height: 50px;
+
+    border-bottom: 1px solid #1C4B6F;
+}
+.sub-menu__list>li:hover {
+    background: rgb(47, 113, 163);
+}
+.sub-menu__link {
+    color: white;
+    display: inline-block;
+    padding: 5px 10px;
+}
+/*Конец меню-навигации*/
+
+/*Меню-бургер (адаптив)*/
+
+/*The end - Меню-бургер (адаптив)*/
+
+/*Logo, title and subtitle*/
+.full-screen__subtitle {
+    padding: 22px 0px 22px 0px;
+    font-size: 18px;
+}
+
+.full-screen__title {
+    font-size: 36px;
+}
+
+.full-screen__logo {
+    padding: 190px 0px 0px 0px;
+}
+.full-screen__logo img {
+    max-width: 100%;
+    height: 267px;
+}
+/*The end - Logo, title and subtitle*/
+
+/* two cards on full-screen */
+.full-screen__cards {
+    display: flex;
+    flex-direction: row;
+
+    margin: 0 auto;
+    padding: 39px 0px 0px 0px;
+}
+.screen__block-container {
+    max-width: 514px;
+    height: 243px;
+
+    margin: 0 14px 0 14px;
+    background: rgba(36, 135, 206, 0.7);
+    border-radius: 5px;
+}
+.screen__block {
+    flex: 0 1 50%;
+}
+.block__title {
+    font-size: 32px;
+    padding: 26px 0px 0px 0px;
+}
+.block__item {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px 26px 20px 26px;
+    height: 194px;
+}
+.item__link {
+    display: flex;
+    flex-direction: column;
+
+    font-size: 15px;
+    line-height: 200%;
+    text-align: right;
+}
+
+
+
+
+
+
+.item__link a {
+    position: relative;
+    color: #FFFFFF;
+}
+.item__link a:hover {
+    color: #FFFFFF;
+}
+.item__link a:hover::before {
+    transform: scaleX(1);
+    transition: transform 0.25s;
+}
+.item__link a::before{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: #FFFFFF;
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    transform: scaleX(0);
+    transition: transform 0.33s;
+    transform-origin: left;
+}
+
+
+
+
+
+
+.item__button {}
+.item__button a {
+    /* скорее всего это центрирование должно быть веременным решением */
+    /* padding-left: 16px; */
+}
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 19px;
+    color: #101010;
+    background: #FFFFFF;
+    border-radius: 5px;
+    font-size: 16px;
+
+    width: 210px;
+    height: 57px; 
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
+    .button {
+        width: 193px;
+    }
+    .item__link {
+        padding-left: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .full-screen__cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .screen__block-container {
+        margin-bottom: 25px;
+    }
+    .button {
+        width: 210px;
+    }
+    .item__link {
+        font-size: 16px;
+    }
+}
+@media (max-width: 762px) {
+
+}
+@media (max-width: 576px) {
+    
+}
+/* The end - two cards on full-screen */
+
+
+
+
+
+
+
+
+
+
+/* All setting Storinka spojivacha and next*/
+.container__background-color {
+    background: rgba(36, 135, 206, 0.06);
+}
+.content {
+    
+}
+h2 {
+    display: flex;
+    justify-content: center;
+
+    padding: 63px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+}
+@media (max-width: 576px) {
+    h2 {
+        padding: 30px;
+        font-size: 33px;
+        line-height: 37px;
+        text-align: center;
+    }
+}
+.button-card {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: center;
+    align-items: center;
+    /* padding: 10.7222px 25.4653px; */
+    /* gap: 6.7px; */
+    width: 120px;
+    height: 36px;
+    background: #2487CE;
+    border-radius: 4px;
+    color: #FFFFFF;
+}
+/* The end - all setting Storinka spojivacha and next*/
+
+
+
+
+
+
+
+/* Storinka spojivacha*/
+.content__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+.storinka-spojivacha {
+}
+.spojivach__title {
+}
+.spojivach__container {
+}
+.spojivach__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.spojivach__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 40px;
+    gap: 15px;
+    margin: 9px;
+    flex: 1 1 50%;
+    max-width: 666px;
+    height: 340px;
+    background: rgba(255, 255, 255, 0.46);
+    box-shadow: rgb(0 0 0 / 40%) 0px 0px 18px -5px;
+    border-radius: 10px;
+}
+.spojivach__card:last-child {
+    margin-bottom: 50px;
+}
+.spojivach-card__icon {
+}
+.spojivach-card__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.spojivach-card__text {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0px 0px 0px 20px;
+
+    height: 140px;
+}
+.spojivach-card__text li {
+    list-style-type: disc;
+}
+.spojivach-card__button {}
+
+
+@media (max-width: 1400px) {
+    .spojivach__card {
+        margin: 11px;
+        flex: 1 1 48%;
+    }
+}
+@media (max-width: 1200px) {
+    .spojivach__card {
+        margin: 14px;
+        flex: 1 1 47%;
+    }
+}
+@media (max-width: 992px) {
+    .spojivach__card {
+        margin: 11px;
+        flex: 1 1 46%;
+        padding: 15px 33px;
+    }
+    .spojivach-card__text {
+        padding: 0px 0px 0px 15px;
+        height: 154px;
+    }
+}
+@media (max-width: 762px) {
+    .spojivach__card {
+        max-width: 710px;
+        margin: 11px;
+        flex: 1 1 47%;
+        padding: 35px 50px;
+    }
+    .spojivach-card__title {
+        font-size: 20px;
+    }
+    .spojivach-card__text {
+        padding: 0px 0px 0px 20px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .spojivach-card__button {
+        display: none;
+    }
+    /* !!!!сделать ссылка карточка начиная с данного размера!!!! */
+}
+@media (max-width: 576px) {
+    .content__container {
+        padding: 0px 1px;
+    }
+    .spojivach__card {
+        padding: 21px;
+    }
+    .spojivach-card__title {
+        font-size: 20px;
+    }
+    .spojivach-card__text {
+        padding: 0px 0px 0px 20px;
+        font-size: 18px;
+    }
+    .spojivach-card__button {
+        display: none;
+    }
+}
+@media (max-width: 360px) {
+    .spojivach__card {
+        padding: 10px;
+    }
+}
+/* нужно каждой карточке задать минимальную ширину,
+        подрезать высоту и менять отступы.
+        Возможно нужно изменить % флекса */
+/* The end - Storinka spojivacha*/
+
+
+
+
+
+
+
+/* Dodatkovi poslugi*/
+
+.dodatkovi-poslugi {
+}
+.poslugi__title {
+}
+.poslugi__container {
+}
+.poslugi__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.poslugi__card {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: flex-start;
+    padding: 25px 40px;
+    gap: 15px;
+    margin: 0px 0px 25px 0px;
+
+    flex: 0 1 50%;
+    max-width: 440px;
+    height: 340px;
+
+    background: rgba(255, 255, 255, 0.46);
+
+    /* Shadow */
+    box-shadow: 0px 0px 18px -5px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+.poslugi__card:last-child {
+    margin-bottom: 50px;
+}
+.poslugi-card__icon {
+}
+.poslugi-card__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.poslugi-card__text {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 0px 0px 0px 20px;
+    height: 100%;
+}
+.poslugi-card__text li {
+    list-style-type: disc;
+}
+.poslugi-card__text p {
+    padding-bottom: 5px;
+}
+.poslugi-card__text ul {
+    padding-left: 15px;
+}
+.poslugi-card__button {
+}
+.button-card {
+}
+
+
+
+
+
+
+@media (max-width: 1400px) {
+    .poslugi__card {
+        flex: 0 1 32%;
+        padding: 25px 33px;
+    }
+    /* .poslugi-card__text {
+        height: 100%;
+    } */
+}
+@media (max-width: 1200px) {
+    .poslugi__card {
+        padding: 15px 13px;
+    }
+    /* .poslugi-card__text {
+        height: 100%;
+    } */
+}
+@media (max-width: 992px) {
+    .poslugi__card {
+        padding: 10px;
+    }
+    .poslugi-card__text {
+        line-height: 16px;
+        padding: 0px 0px 0px 10px;
+        /* height: 100%; */
+    }
+}
+@media (max-width: 762px) {
+    .poslugi__card {
+        max-width: 710px;
+        margin: 11px;
+        flex: 1 1 47%;
+        padding: 35px 50px;
+    }
+    .poslugi-card__title {
+        font-size: 20px;
+    }
+    .poslugi-card__text {
+        padding: 0px 0px 0px 20px;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .poslugi-card__button {
+        display: none;
+    }
+    /* !!!!сделать ссылка карточка начиная с данного размера!!!! */
+}
+@media (max-width: 576px) {
+    .poslugi__card {
+        padding: 21px;
+    }
+}
+@media (max-width: 360px) {
+    .poslugi__card {
+        padding: 10px;
+    }
+}
+/* The end - Dodatkovi poslugi*/
+
+
+
+
+/* News */
+.content__container {
+}
+.news {
+}
+.news__title {
+    font-weight: 700;
+    font-size: 18px;
+}
+.news__container {
+}
+/* The end - News*/
+
+
+
+
+
+/* Footer*/
+.contacts {
+}
+.contacts__title {
+}
+.contacts__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 15px 30px 15px;
+}
+.contacts__block-items {
+    /* flex: 0 1 50%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    /* padding: 0px 0px 0px 220px; */
+}
+.contacts__item {
+    display: flex;
+    align-items: center;
+}
+.contacts-item__icon {
+    /* нормально отцентровать */
+    margin: 27px 15px 0px 0px;
+}
+.contacts-item__icon img {
+    vertical-align: top;
+}
+.contacts-item__block {
+    padding: 30px 0px 0px 0px;
+    /* max-width: 230px; */
+}
+.contacts-block__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+.contacts-block__text {
+    font-size: 18px;
+    line-height: 22px;
+}
+.contacts__block-map {
+    
+}
+
+
+@media (max-width: 1400px) {
+    .contacts-item__block {
+        padding: 24px 0px 0px 0px;
+    }
+}
+@media (max-width: 1200px) {
+    .contacts__block-items {
+        flex: 0 1 35%;    
+    }
+}
+@media (max-width: 992px) {
+    .contacts__block-items {
+        flex: 0 0 56%;
+    }
+    .contacts__block-map {
+        padding-top: 30px;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 762px) {
+
+}
+@media (max-width: 655px) {
+    .contacts__block-map iframe{
+        width: 100%;
+        margin-right: 30px;
+    }
+}
+/* The end - Footer*/
+
+
+/* Сделать потом: */
+
+/* скрестить все H2 */
