@@ -88,13 +88,12 @@ body {
 .header__logo {
     position: relative;
     width: 40px;
-    left: 37%;
     z-index: 1;
 }
 .menu__icon {
     display: none;
 }
-@media (min-width: 767px) {
+/* @media (min-width: 767px) {
     .menu__list {
         display: flex;
         font-size: 16px;
@@ -104,20 +103,46 @@ body {
         margin: 0px 10px 0px 0px;
         position: relative;
     }
-}
-/* .menu__list {
+} */
+.menu__list {
     display: flex;
     font-size: 16px;
-    gap: 75px;
-} */
-/* .menu__list>li {
+    gap: 70px;
+}
+.menu__list>li {
     margin: 0px 10px 0px 0px;
     position: relative;
-} */
+}
 .menu__list>li:hover .sub-menu__list {
     display: block;
 }
+.menu__logo {
+    padding: 0px 0px 0px 75px;
+}
 
+@media (max-width: 1400px) {
+    .menu__list {
+        gap: 50px;
+    }
+    .menu__logo {
+        padding: 0px 0px 0px 30px;
+    }
+}
+@media (max-width: 1200px) {
+    .menu__list {
+        gap: 25px;
+    }
+}
+@media (max-width: 992px) {
+    .menu__logo {
+        padding: 0px;
+    }
+    .menu__list {
+        gap: 0px;
+    }
+}
+@media (max-width: 768px) {
+}
 
 
 /* @media (max-width: 767px) {
@@ -219,27 +244,26 @@ body {
     backdrop-filter: blur(10px);
     text-transform: initial;
 
-    /* вопрос насчёт такого решения */
-    right: -38px;
+    width: max-content;
 }
-.sub-menu__list>li {
+.sub-menu__list li {
     align-items: center;
     display: flex;
 
     padding: 0px 0px 0px 10px;
 
-    width: 250px;
+    width: 100%;
     height: 50px;
 
     border-bottom: 1px solid #1C4B6F;
 }
-.sub-menu__list>li:hover {
+.sub-menu__list li:hover {
     background: rgb(47, 113, 163);
 }
 .sub-menu__link {
     color: white;
     display: inline-block;
-    padding: 5px 10px;
+    padding: 0px 7px;
 }
 /*Конец меню-навигации*/
 
@@ -382,16 +406,33 @@ body {
         justify-content: center;
     }
     .screen__block-container {
+        flex: 1 1 46%;
         margin-bottom: 25px;
+    }
+    .block__title {
+        line-height: 35px;
+    }
+    .block__item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        padding: 20px 10px 20px 10px;
+        height: 100%;
     }
     .button {
         width: 210px;
     }
+    .item__button a {
+        width: 88%;
+    }
     .item__link {
         font-size: 17px;
+        text-align: center;
+        padding: 0;
     }
 }
-@media (max-width: 762px) {
+@media (max-width: 768px) {
 }
 @media (max-width: 540px) {
     .screen__block-container {
@@ -399,7 +440,9 @@ body {
         min-width: 370px;
     }
     .block__title {
+        font-size: 31px;
         line-height: 35px;
+        width: 99%;
     }
     .block__item {
         align-items: center;
@@ -420,7 +463,15 @@ body {
     }
 }
 @media (max-width: 400px) {
-
+    .screen__block {
+        min-width: 0px;
+    }
+    .screen__block-container {
+        min-width: 300px;
+        max-width: 300px;
+        
+        margin: 0px 0px 25px 0px;
+    }
 }
 /* The end - two cards on full-screen */
 
@@ -554,12 +605,11 @@ h2 {
         height: 154px;
     }
 }
-@media (max-width: 762px) {
+@media (max-width: 768px) {
     .spojivach__card {
         max-width: 710px;
         margin: 11px;
-        flex: 1 1 47%;
-        padding: 35px 50px;
+        flex: 1 1 48%;
     }
     .spojivach-card__title {
         font-size: 20px;
@@ -576,7 +626,7 @@ h2 {
 }
 @media (max-width: 576px) {
     .content__container {
-        padding: 0px 1px;
+        padding: 0px;
     }
     .spojivach__card {
         padding: 21px;
@@ -701,12 +751,11 @@ h2 {
         /* height: 100%; */
     }
 }
-@media (max-width: 762px) {
+@media (max-width: 768px) {
     .poslugi__card {
         max-width: 710px;
         margin: 11px;
-        flex: 1 1 47%;
-        padding: 35px 50px;
+        flex: 1 1 48%;
     }
     .poslugi-card__title {
         font-size: 20px;
@@ -819,7 +868,7 @@ h2 {
         margin: 0 auto;
     }
 }
-@media (max-width: 762px) {
+@media (max-width: 768px) {
 
 }
 @media (max-width: 655px) {
