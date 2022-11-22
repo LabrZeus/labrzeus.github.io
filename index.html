@@ -8,13 +8,15 @@
     <meta name="author" content="Горян Єгор">
     <title>"КП" Водоканал</title>
     <link rel="shortcut icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 
+<!-- <div class="content"></div> -->
+
 <body>
-    <div class="wrapper"> 
+    <div class="wrapper">
 <!-- ***************************** Меню/Лого/Блоки ************************************ -->  
         <div class="full-screen">
             <div class="full-screen__body">
@@ -44,18 +46,32 @@
                                             <a href="#" class="sub-menu__link">Звітність</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="sub-menu__link">Стоп-корупція</a>
+                                            <a href="stop_corup.html" class="sub-menu__link">Стоп-корупція</a>
                                         </li>
                                         <li>
                                             <a href="#" class="sub-menu__link">Статут</a>
                                         </li>
                                         <li>
-                                            <a href="#" class="sub-menu__link">Нормативні документи</a>
+                                            <a href="norm_document.html" class="sub-menu__link">Нормативні документи</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a href="#" class="menu__link">ТАРИФИ</a>
+                                    <ul class="sub-menu__list">
+                                        <li>
+                                            <a href="povidomlenya.html" class="sub-menu__link">Повідомлення</a>
+                                        </li>
+                                        <li>
+                                            <a href="arhiv_tarif.html" class="sub-menu__link">Архів тарифів</a>
+                                        </li>
+                                        <li>
+                                            <a href="subsidia.html" class="sub-menu__link">Субсидії</a>
+                                        </li>
+                                        <li>
+                                            <a href="monitoring.html" class="sub-menu__link">Моніторинг</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#dodatkoviPoslugi" class="menu__link yakor">ДОДАТКОВІ ПОСЛУГИ</a>
@@ -64,7 +80,7 @@
                                     <a href="#novini" class="menu__link yakor">НОВИНИ</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="menu__link">КОНТАКТИ</a>
+                                    <a href="contacts.html" class="menu__link">КОНТАКТИ</a>
                                 </li>
                                 <li>
                                     <a href="#" class="menu__link">ВАКАНСІЇ</a>
@@ -80,7 +96,8 @@
                         
                 </div>
 
-                <div class="full-screen__logo"> <img src="img/logo-vodokanal.webp" alt='Логотип "КП" Водоканал'> </div>
+                <div class="full-screen__logo" id="scroll-top"> <img src="img/logo-vodokanal.webp" alt='Логотип "КП" Водоканал'> </div>
+                <!-- убрать БР! -->
                 <div class="full-screen__subtitle"> Виконавчий комітет Запорізької міської ради <br> Комунальне підприємство </div>
                 <div class="full-screen__title"> <h1>"ВОДОКАНАЛ"</h1> </div>
 
@@ -122,9 +139,7 @@
             </video>
             
         </div>
-    </div>
 
-        <div class="content">
 <!-- ***************************** Раздел "Сторінка споживача" ************************************ -->  
             <div class="content__container">
                 <div class="storinka-spojivacha">
@@ -189,15 +204,158 @@
                 <div class="popup__body">
                     <div class="popup__content">
                         <a href="#header" class="popup__close close-popup">+</a>
-                        <div class="popup__title">Публічні договори</div>
-                        <div class="popup__text">                           
-                        </div>
+                        <div class="popup__title">Довідкова інформація</div>
+                        <div class="popup__text">     
+                            <div class="widget-show">
+                                <button class="collapsible">Договір розстрочки</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Для укладання з КП «Водоканал» «Договору про розстрочку сплати заборгованості за надані послуги з централізованого
+                                        водопостачання та централізованого водовідведення» Споживач особисто звертається до відділу по роботі зі споживачами
+                                        управління зі збуту за адресою: вул. Святого Миколая, 73 та надає документи (копії та оригінали для звіряння):</p>
+                                    <ul>
+                                        <li>паспорту <span style="color: red;">(может просто "паспорт" ?)</span> та ІПН</li>
+                                        <li>квитанції про сплату частини заборгованості</li>
+                                    </ul>
+                                    <p></p>
+                                    <p>Якщо Договір бажає укласти особа, на яку не відкрито особовий рахунок, але яка зареєстрована за даною адресою,
+                                        необхідно додатково надати:</p>
+                                    <ul>
+                                        <li>паспорт та ІПН особи, яка бажає укласти договір</li>
+                                        <li>дозвіл на укладання Договору від особи, на яку відкрито особовий рахунок</li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                            </div>
 
-                        <div class="popup__button close-popup">
-                            <a href="#" class="button-popup">ЗАЧИНИТИ</a>
-                        </div>
+                            <div class="widget-show">
+                                <p class="bold">Внесення змін до особового рахунку</p>
+                                <p>Для внесення змін до особового рахунку необхідно надати звернення та документи <a target="_blank" href="contacts.html">служби реалізації</a>,
+                                    поштою (69002, м. Запоріжжя, вул. Святого Миколая, 61) або на електронну пошту info.vodokanal@zp.gov.ua</p>
+                                    <p></p>
+                                <button class="collapsible">Переоформлення особового рахунку (зміна власника квартири/приватного будинку)</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Перелік документів (копії та оригінали для звіряння):</p>
+                                    <ul>
+                                        <li>документи, що підтверджують право власності на квартиру/будинок (договір купівлі-продажу, договір дарування тощо)</li>
+                                        <li>витяг з державного реєстру речових прав на нерухоме майно про реєстрацію права власності</li>
+                                        <li>паспорт та ІПН власника/співвласника(ів) квартири/будинку</li>
+                                        <li>письмова згода співвласника/ів (у разі наявності)</li>
+                                        <li>паспорти з відміткою про реєстрацію або довідка з департаменту реєстраційних послуг Запорізької міської ради всіх зареєстрованих осіб</li>
+                                        <li>у разі якщо квартира не приватизована – ордер або довідка райвиконком про укладання договору найму, з вказанням ПІБ особи</li>
+                                    </ul>
+                                    <p></p>
+                                </div> 
+
+                                <p></p>
+
+                                <button class="collapsible">Об’єднання особових рахунків</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Перелік документів (копії та оригінали для звіряння):</p>
+                                    <ul>
+                                        <li>документи, що підтверджують право власності на квартиру/будинок (договір купівлі-продажу, договір дарування тощо)</li>
+                                        <li>витяг з державного реєстру речових прав на нерухоме майно про реєстрацію права власності</li>
+                                        <li>паспорт та ІПН власника/співвласника(ів) квартири/будинку</li>
+                                        <li>паспорти з відміткою про реєстрацію або довідка з департаменту реєстраційних послуг Запорізької міської ради всіх зареєстрованих осіб</li>
+                                    </ul>
+                                    <p></p>
+                                </div>   
+                                
+                                <p></p>
+
+                                <button class="collapsible">Зміна кількості зареєстрованих осіб</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Перелік документів (копії та оригінали для звіряння):</p>
+                                    <ul>
+                                        <li>паспорт з відміткою про реєстрацію/зняття з реєстрації або довідка департаменту реєстраційних послуг Запорізької міської ради</li>
+                                        <li>якщо особу визнано померлою - свідоцтво про смерть</li>
+                                        <li>якщо особу визнано безвісті відсутньою - відповідне рішення</li>
+                                        <li>якщо особа мешкає без реєстрації - паспорт та ІПН Споживача та паспорт та ІПН особи, яка проживає без реєстрації</li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                                
+                                <p></p>
+
+                                <button class="collapsible">Зміна питомої норми споживання питної води</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Необхідно надати доступ для обстеження ступеню благоустрою.</p>
+                                </div>
+
+                                <p></p>
+
+                                <button class="collapsible">Зміна поливної площі присадибної ділянки</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Необхідно надати доступ для обстеження.</p>
+                                </div>
+                                <p></p>
+                            </div>
+
+                            <div class="widget-show">
+                                <button class="collapsible">Перерахунок за період тимчасової відсутності</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Рішенням виконавчого комітету Запорізької міської ради «Про порядок зменшення розміру плати за комунальні послуги в разі тимчасової
+                                        відсутності споживача та/або членів його сім'ї» від 24.03.2017р. №142 передбачено «Порядок зменшення розміру плати за комунальні послуги
+                                        в разі тимчасової відсутності споживача та/або членів його сім'ї за місцем реєстрації» <span style="color: red;">(потрібно посилання на рішення)</span>.</p>
+                                    <p>Необхідно надати звернення та документи  згідно з  Рішенням до <a target="_blank" href="contacts.html">служби реалізації</a>, поштою (69002, м. Запоріжжя, вул.
+                                        Святого Миколая, 61) або на електронну пошту info.vodokanal@zp.gov.ua </p>
+                                </div> 
+                            </div>
+
+                            <div class="widget-show">
+                                <button class="collapsible">Перерозподіл сплачених коштів</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Надати звернення до <a target="_blank" href="contacts.html">служби реалізації</a>. При собі мати документ, що підтверджує особу.</p>
+                                </div> 
+                            </div>
+
+                            <div class="widget-show">
+                                <button class="collapsible">Довідка про заборгованість</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Звернутися до <a target="_blank" href="contacts.html">служби реалізації</a>. При собі мати документ, що підтверджує особу.</p>
+                                    <p>При на явності на абонентському обліку КП «Водоканал» приладу обліку холодної води необхідно надати доступ для зняття контрольних показань.</p>
+                                </div>
+                            </div>
+
+                            <div class="widget-show">
+                                <button class="collapsible">Заявки до Інформаційного центру</button>
+                                <div class="hidden-widget">
+                                    <p></p>
+                                    <p>Перелік питань для оформлення заявки:</p>
+                                    <ul>
+                                        <li>Зняття контрольних показань приладів обліку холодної води</li>
+                                        <li>Припис на проведення повірки приладів обліку холодної води</li>
+                                        <li>Зняття пломби у зв’язку з аварійною ситуацією</li>
+                                        <li>Дозвіл на заміну приладів обліку холодної води на новий (поломка тощо)</li>
+                                        <li>Прийняття приладів обліку холодної води на абонентський облік</li>
+                                        <li>Обстеження поливної площі присадибної ділянки</li>
+                                        <li>Визначення норми споживання питної води</li>
+                                    </ul>
+                                    <p></p>
+                                    <p>Звернутися за номерами (багатоканальних) телефонів:</p>
+                                    <ul>
+                                        <li>(061)214-9-214 (Міській номер)</li>
+                                        <li>067-622-32-14 (Київстар)</li>
+                                        <li>063-350-72-14 (Лайф)</li>
+                                        <li>099-012-02-14 (Водофон)</li>
+                                    </ul>
+                                    <p></p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="popup__button close-popup">
+                        <a href="#" class="button-popup">ЗАЧИНИТИ</a>
                     </div>
                 </div>
+            </div>
             </div>
 
             <div id="popup__Publ-Dogovor" class="popup">
@@ -205,9 +363,43 @@
                     <div class="popup__content">
                         <a href="#header" class="popup__close close-popup">+</a>
                         <div class="popup__title">Публічні договори</div>
-                        <div class="popup__text">                           
-                        </div>
-
+                        <div class="popup__text">
+                            <button class="collapsible">ПОВІДОМЛЕННЯ від 01.03.2022 року про укладення ІНДИВІДУАЛЬНОГО ДОГОВОРУ
+                                про надання послуг з централізованого водопостачання та централізованого водовідведення, що є публічним договором приєднання</button>
+                            <div class="hidden-widget">
+                                <p></p>
+                                <ul>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        ПОВІДОМЛЕННЯ від 01.03.2022 року для споживачів – власників (співвласників, користувачів) житлових приміщень в багатоквартирному
+                                        будинку про публічну пропозицію (оферту) КП «Водоканал»</a></li>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        ПОВІДОМЛЕННЯ від 01.03.2022 року для споживачів – власників (користувачів) індивідуальних (садибних) житлових будинків про публічну
+                                        пропозицію (оферту) КП «Водоканал»</a></li>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        ПОВІДОМЛЕННЯ від 01.03.2022 року для споживачів – власників (співвласників, користувачів) нежитлових приміщень в
+                                        багатоквартирному будинку про публічну пропозицію (оферту) КП «Водоканал»</a></li>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        ПОВІДОМЛЕННЯ від 01.03.2022 року для колективних споживачів</a></li>
+                                </ul>
+                                <p></p>
+                            </div> 
+                            <p></p>
+                            <p class="bold">Рішення Запорізької міської ради №49 від 25.03.2020р.</p>     
+                            <p>Відповідно до Рішення Запорізької міської ради №49 від 25.03.2020р. «Про надання дозволу на укладення договору з індивідуальними споживачами»,
+                                з метою врегулювання договірних відносин зі споживачами, КП «Водоканал» пропонує ознайомитися з умовами Публічних договорів, які будуть укладені
+                                з власниками (співвласниками, користувачами) житлових і нежитлових приміщень в багатоквартирних будинках, що не визначилися з моделлю договірних
+                                відносин з КП «Водоканал», після спливу 5-ти місяців з дня завершення заходів щодо запобігання виникненню та поширенню коронавірусної хвороби
+                                COVID-19, а з власниками (співвласниками, користувачами) приватних домоволодінь - через 30-ть календарних днів з дати цієї публікації
+                                Публічного договору в газеті «Запорізька Січ».</p> 
+                                <ul>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        Договір з індивідуальним споживачем-власником, користувачем житлового приміщення у будівлі</a></li>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        Договір з індивідуальним споживачем-власником, користувачем нежитлового приміщення у будівлі</a></li>
+                                    <li><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                        Договір з індивідуальним споживачем-власником, користувачем приватного домоволодіння</a></li>
+                                </ul>               
+                    </div>
                         <div class="popup__button close-popup">
                             <a href="#" class="button-popup">ЗАЧИНИТИ</a>
                         </div>
@@ -502,6 +694,7 @@
                                                 <tr><td>06.04.2020</td><td><a href="#"></a></td><td>136 831.63</td><td>39.55</td></tr>
                                                 <tr><td>06.04.2020</td><td><a href="#"></a></td><td>136 831.63</td><td>39.09</td></tr>
                                             </table>
+                                            <p></p>
                                         </div>
                                 </div>                              
                         </div>
@@ -517,8 +710,11 @@
                 <div class="popup__body">
                     <div class="popup__content">
                         <a href="#header" class="popup__close close-popup">+</a>
-                        <div class="popup__title">Норми</div>
-                        <div class="popup__text">                           
+                        <div class="popup__title">Питомі норми споживання питної води</div>
+                        <div class="popup__text"> 
+                            <p>Питомі норми споживання питної води затверджені<a target="_blank"
+                                href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">
+                                рішенням виконавчого комітету Запорізької міської ради від 29.03.2021 №96</a></p>                          
                         </div>
 
                         <div class="popup__button close-popup">
@@ -531,7 +727,7 @@
             <div class="container__background-color">
                 <div class="content__container">
                     <div class="dodatkovi-poslugi">
-                        <div class="poslugi__title"><h2 id="dodatkoviPoslugi"></h2></div>
+                        <div class="poslugi__title"><h2 id="dodatkoviPoslugi">Додаткові послуги</h2></div>
                         <div class="poslugi__container">
                             <div class="poslugi__block">
                                 <div class="poslugi__card">
@@ -631,7 +827,6 @@
                             
                                 <button class="collapsible">Підприємства, з якими заключено договір про співпрацю при наданні послуг
                                     з державної повірки приладів обліку води, до яких Ви можете звернутися:</button>
-
                                     <div class="hidden-widget">
                                         <p></p>
                                         <p><span class="bold">ТОВ "Сервістехнологія"</span> - без демонтажу</p>
@@ -776,12 +971,12 @@
                             <p class="bold">Підрозділ надає додаткові послуги з підключення до міських мереж водопроводу і каналізації</p>
                             <p class="bold">Для виконання робіт з підключення до міських мереж водопроводу і каналізації потужностями КП «Водоканал» необхідно:</p>
                             <ul>
-                                <li>Надати до канцелярії підприємства або начальнику підрозділу, що виконуватиме роботи Заяву на підключення <a href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">ЗРАЗОК</a>
+                                <li>Надати до канцелярії підприємства або начальнику підрозділу, що виконуватиме роботи Заяву на підключення <a href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">ЗРАЗОК(не предоставили сам документ)</a>
                                     <a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">Додаток 1</a>.</li>
                                 <li>В підрозділі, що виконуватиме роботи з підключення до міських мереж водопроводу і каналізації, отримати та (у разі згоди) сплатити рахунок за виконання робіт.</li>
                                 <li>Надати в підрозділ, що виконуватиме роботи з підключення до міських мереж водопроводу і каналізації, копію квитанції по оплату (отриману у п.2) з назвою банку.</li>
                                 <li>Після виконання робіт відповідним підрозділом, підписати Акт прийому – передачі виконаних робіт по підключенню до мереж.</li>
-                                <li>Додаток Акт на промивання і дезінфекцію. (які дійсні 5 днів) <a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">Додаток 2</a>.</li>
+                                <li>Додаток Акт на промивання і дезінфекцію (які дійсні 5 днів) <a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">Додаток 2</a>.</li>
                             </ul>
                             <p class="bold">Місцезнаходження начальників підрозділів, для підключення мереж водопостачання:</p>
                             <ul>
@@ -794,7 +989,6 @@
                             <ul>
                                 <li>ЦМК вул. Дніпровська, 4</li>
                             </ul>
-                            <p><a target="_blank" href="https://zeus.net.ua/wp-content/uploads/2019/07/zraz.jpeg">Додатки: 1. Заява на підключення, 2. акт промивки та дезінфекції</a></p>
                         </div>
                         <div class="popup__button close-popup">
                             <a href="#" class="button-popup">ЗАЧИНИТИ</a>
@@ -929,11 +1123,59 @@
                         </div>
                     </div>
             </div> 
-
-        </div>
-</body>
+    
 <!-- ***************************** Footer ************************************ -->
 <footer>
+    <div class="container__background-color">
+        <div class="container__footer">
+            <div class="block__footer">
+
+                <div class="footer__item">
+                    <div class="item-logo yakor"><a href="#scroll-top"><img src="img/logo-footer.png" alt="Логотип"></div></a>
+                    <div class="item-logotitle">КП “ВОДОКАНАЛ”</div>
+                </div>
+
+                <div class="footer__item">
+                    <div class="item-title">Адреса</div>
+                    <p>69002,</p>
+                    <p>м. Запоріжжя,</p>
+                    <p>вул. Святого Миколая, 61</p>
+                </div>
+
+                <div class="footer__item">
+                    <div class="item-title">Телефон</div>
+                    <p>(061) 222-14-52</p>
+                    <div class="item-title">Електронна пошта</div>
+                    <p>info.vodokanal@zp.gov.ua</p>
+                </div>
+
+                <div class="footer__item">
+                    <div class="item-title">Робочі години</div>
+                    <p>08:00-17:00 пн-чт</p>
+                    <p>08:00-15:45 пт</p>
+                    <p>12:00-12:45 - перерва</p>
+                    <p>сб,нд - вихідний</p>
+                </div>
+
+                <div class="footer__item">
+                    <div class="item__title-icon">
+                        <div class="item-title">Ми є у Facebook</div>
+                        <div class="item-icon"><a target="_blank" href="https://www.facebook.com/groups/2015289968753759"><img src="img/icon/contacts/facebook.png"></div></a>
+                    </div>
+
+                    <div class="item__title-icon">
+                        <div class="item-title">Передати покази за допомогою чат-ботів</div>
+                        <div class="item-icon"><a target="_blank" href="https://t.me/GKH_IN_UA_BOT"><img src="img/icon/contacts/telegram.png"></a><a target="_blank" href="viber://pa?chatURI=gkh_in_ua"><img src="img/icon/contacts/viber.png"></div></a>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- <footer>
     <div class="container__background-color">
         <div class="content__container">
             <div class="contacts">
@@ -989,9 +1231,11 @@
             </div>
         </div>
     </div>
+</footer> -->
+</div>
+<script src="js/script.js"></script> 
+</body>
 
-    <script src="js/script.js"></script>
-</footer>
 
 </html>
 

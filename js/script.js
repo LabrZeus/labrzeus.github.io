@@ -1,4 +1,6 @@
 "use strict"
+
+
 // **************************************
 // плавный скролл по якорям
 document.querySelectorAll('a.yakor').forEach(link => {
@@ -22,6 +24,8 @@ document.querySelectorAll('a.yakor').forEach(link => {
 })
 // Конец плавного скролла по якорям
 // **************************************
+
+
 // Popup
 const popupLinks = document.querySelectorAll('.popup-link');
 const body = document.querySelector('body');
@@ -126,7 +130,7 @@ document.addEventListener('keydown', function (e) {
 
 // дописать полифилы под старые браузеры с видеоурока
 // The end - Popup
-
+// **************************************
 
 
 
@@ -139,10 +143,69 @@ for(let i = 0; i < coll.length; i++) {
         this.classList.toggle('active');
         let content = this.nextElementSibling;
         if(content.style.maxHeight) {
-             content.style.maxHeight = null;
+            content.style.maxHeight = null;
         } else {
             content.style.maxHeight = content.scrollHeight + 'px'
         }
     })
 }
 // Конец выпадающего списка в popup
+// **************************************
+
+
+
+
+// изучить вопрос, можно ли эти 2 функции обьеденить в одну, например через обьект элементов!!!
+
+// Выпадающий список в других страницах
+let collOtherPages = document.getElementsByClassName("collapsible__other-pages");
+for(let i = 0; i < collOtherPages.length; i++) {
+    collOtherPages[i].addEventListener('click', function() {
+        this.classList.toggle('active');
+        let content = this.nextElementSibling;
+        if(content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + 'px'
+        }
+    })
+}
+// Конец выпадающего списка в других страницах
+// **************************************
+
+
+
+// Поменять стиль кнопки, с которой выпадает вложенный список на странице "Контакты"
+let item = document.getElementsByClassName("collapsible__other-pages");
+for(let i = 0; i < item.length; i++) {
+    item[i].addEventListener('click', function() {
+        this.classList.toggle('change__style-button');
+    })
+}
+// Конец смены стиля кнопки, с которой выпадает вложенный список на странице "Контакты"
+// **************************************
+
+
+
+// Поменять стиль кнопки, с которой выпадает вложенный список на главной странице в попапах
+let itemInPopup = document.getElementsByClassName("collapsible");
+for(let i = 0; i < itemInPopup.length; i++) {
+    itemInPopup[i].addEventListener('click', function() {
+        this.classList.toggle('change__style-collapsible');
+    })
+}
+// Конец смены стиля кнопки, с которой выпадает вложенный список на главной странице попапах
+// **************************************
+
+
+
+// Развернуть стрелку во кнопке выпадающего списка
+// let arrow = document.getElementsByClassName("arrow__bottom");
+// for(let i = 0; i < arrow.length; i++) {
+//     arrow[i].addEventListener('click', function() {
+//         // this.classList.add('arrow__top');
+//         this.classList += " arrow__top";
+//     })
+// }
+// Конец смены положения стрелки в кнопке выпадающего спсика
+// **************************************
