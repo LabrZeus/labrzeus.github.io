@@ -1,8 +1,106 @@
 "use strict"
 
+// **************************************
+// определение моб устройства для переключения мыши на тач-скрин
+const isMobile = {
+    Android: function () {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+        return (
+            isMobile.Android() ||
+            isMobile.BlackBerry() ||
+            isMobile.iOS() ||
+            isMobile.Opera() ||
+            isMobile.Windows());
+    }
+}
+
+if (isMobile.any()) {
+    document.body.classList.add('_touch');
+
+    let menuArrows = document.querySelectorAll('.menu__arrow');
+    if (menuArrows.length > 0) {
+        for (let index = 0; index < menuArrows.length; index++) {
+            const menuArrow = menuArrows[index];
+            menuArrow.addEventListener("click", function (e) {
+                menuArrow.parentElement.classList.toggle('_active-menu-arrow');
+            })
+        }
+    }
+
+} else {
+    document.body.classList.add('_pc');
+}
+// конец определения моб устройства для переключения мыши на тач-скрин
+// **************************************
+
 
 // **************************************
-// плавный скролл по якорям
+// меню бургер
+const iconMenu = document.querySelector('.menu__icon');
+const menuBody = document.querySelector('.menu__body');
+if (iconMenu) {
+    iconMenu.addEventListener("click", function (e) {
+        document.body.classList.toggle('_lock-scroll');
+        iconMenu.classList.toggle('_active-menu-arrow');
+        menuBody.classList.toggle('_active-menu-arrow');
+    });
+}
+// конец меню бургер
+// **************************************
+
+
+
+
+// **************************************
+// прокрутка при клике для меню
+const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+if (menuLinks.length > 0) {
+    menuLinks.forEach(menuLink => {
+        menuLink.addEventListener("click", onMenuLinkClick);
+    });
+
+    function onMenuLinkClick(e) {
+        const menuLink = e.target;
+        if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+            const gotoBlock = document.querySelector(menuLink.dataset.goto);
+            const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+            if (iconMenu.classList.contains('_active-menu-arrow')) {
+                document.body.classList.remove('_lock-scroll');
+                iconMenu.classList.remove('_active-menu-arrow');
+                menuBody.classList.remove('_active-menu-arrow');
+            }
+
+            window.scrollTo({
+                top: gotoBlockValue,
+                behavior: "smooth"
+            });
+            e.preventDefault();
+        }
+    }
+}
+
+// Конец прокрутке при клике для меню
+// **************************************
+
+
+
+// **************************************
+// плавный скролл по якорям для карточки на главном меню
 document.querySelectorAll('a.yakor').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault()
@@ -12,7 +110,7 @@ document.querySelectorAll('a.yakor').forEach(link => {
         const scrollTarget = document.getElementById(href)
 
         // значение регулирует высоту шапки для точного позиционирования конечной остановки якоря
-        const topOffset = -5
+        const topOffset = 60
         const elementPosition = scrollTarget.getBoundingClientRect().top
         const offsetPosition = elementPosition - topOffset
 
@@ -22,7 +120,7 @@ document.querySelectorAll('a.yakor').forEach(link => {
         })
     })
 })
-// Конец плавного скролла по якорям
+// Конец плавного скролла по якорям для карточки на главном меню
 // **************************************
 
 
@@ -135,7 +233,7 @@ document.addEventListener('keydown', function (e) {
 
 
 
-
+// **************************************
 // Выпадающий список в popup
 let coll = document.getElementsByClassName("collapsible");
 for(let i = 0; i < coll.length; i++) {
@@ -151,6 +249,51 @@ for(let i = 0; i < coll.length; i++) {
 }
 // Конец выпадающего списка в popup
 // **************************************
+
+
+
+
+// **************************************
+// Действие клика на кнопке
+document.addEventListener("click", function (e) {
+    const targetItem = e.target;
+    if (targetItem.closest('[data-ripple]')) {
+        //константы
+        const button = targetItem.closest('[data-ripple]');
+        const ripple = document.createElement('span');
+        const diametr = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diametr / 2;
+
+        //формирование элемента
+        ripple.style.width = ripple.style.height = `${diametr}px`;
+        ripple.style.left = `${e.pageX - (button.getBoundingClientRect().left + scrollX) - radius}px`;
+        ripple.style.top = `${e.pageY - (button.getBoundingClientRect().top + scrollY) - radius}px`;
+        ripple.classList.add('ripple');
+
+        //добавление элемента
+        button.appendChild(ripple);
+
+        //Получение времени действия анимации
+        const timeout = this.getAnimationDuration(ripple);
+
+        //Удаление элемента
+        setTimeout(() => {
+            ripple ? ripple.remove() : null;
+        }, timeout)
+
+        //Функция получения времени действии анимации
+        function getAnimationDuration() {
+            const aDuration = window.getComputedStyle(ripple).animationDuration;
+            return aDuration.includes('ms') ?
+                aDuration.replace("ms", '') : aDuration.replace("s", '') * 1000;
+        }
+
+    }
+});
+// The end - Действие клика на кнопке
+// **************************************
+
+
 
 
 
