@@ -30,7 +30,7 @@
                                 <ul class="menu__list">
                                     <li><a href="index.html" class="menu__link">Головна</a></li>
                                     <li>
-                                        <a href="" class="menu__link">ПРО ПІДПРИЄМСТВО</a>
+                                        <a class="menu__link menu__mobile">ПРО ПІДПРИЄМСТВО</a>
                                         <span class="menu__arrow"></span>
                                         <ul class="menu__sub-list">
                                             <li>
@@ -57,7 +57,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="" class="menu__link">ТАРИФИ</a>
+                                        <a class="menu__link menu__mobile">ТАРИФИ</a>
                                         <span class="menu__arrow"></span>
                                         <ul class="menu__sub-list">
                                             <li>
@@ -75,7 +75,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="" class="menu__link">Звітність</a>
+                                        <a class="menu__link menu__mobile">Звітність</a>
                                         <span class="menu__arrow"></span>
                                         <ul class="menu__sub-list">
                                             <li>
@@ -92,7 +92,8 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a data-goto=".goto__novini" href="#" class="menu__link">НОВИНИ</a></li>
+                                    <!-- data-goto=".goto__novini" -->
+                                    <li><a href="novini.html" class="menu__link">НОВИНИ</a></li>
                                     <li><a href="contacts.html" class="menu__link">КОНТАКТИ</a></li>
                                     <li><a href="vakancii.html" class="menu__link">ВАКАНСІЇ</a></li>
                                 </ul>
@@ -167,28 +168,30 @@
                     <div class="spojivach__title"><h2 id="storinkaSpojivacha">Сторінка споживача</h2></div>
                     <div class="spojivach__container">
                         <div class="spojivach__block">
-                            <div class="spojivach__card">
-                                <div class="spojivach-card__icon"><img src="img/icon/Dovidkova_Info.svg" alt=""></div>
-                                <div class="spojivach-card__title">Довідкова інформація</div>
-                                <div class="spojivach-card__text">
-                                    <ul>
-                                        <li>Договір розстрочки</li>
-                                        <li>Зміни по особовому рахунку</li>
-                                        <li>Перерахунок при відсутності особи</li>
-                                        <li>Коригування оплати</li>
-                                        <li>Довідка про заборгованість</li>
-                                        <li>Об’єднання особових рахунків</li>
-                                        <li>Перелік заявок до Інформцентру</li>
-                                    </ul>
+
+                                <div class="spojivach__card">
+                                    <div class="spojivach-card__icon"><img src="img/icon/Dovidkova_Info.svg" alt=""></div>
+                                    <div class="spojivach-card__title">Довідкова інформація</div>
+                                    <div class="spojivach-card__text">
+                                        <ul>
+                                            <li>Договір розстрочки</li>
+                                            <li>Зміни по особовому рахунку</li>
+                                            <li>Перерахунок при відсутності особи</li>
+                                            <li>Коригування оплати</li>
+                                            <li>Довідка про заборгованість</li>
+                                            <li>Об’єднання особових рахунків</li>
+                                            <li>Перелік заявок до Інформцентру</li>
+                                        </ul>
+                                    </div>
+                                    <div class="spojivach-card__button">
+                                        <a href="#popup__Dovidkova-Info" class="popup-link">
+                                            <button data-ripple class="button-test" type="button">
+                                                Детальніше
+                                            </button>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div class="spojivach-card__button">
-                                    <a href="#popup__Dovidkova-Info" class="popup-link">
-                                        <button data-ripple class="button-test" type="button">
-                                            Детальніше
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
+                            
                             <div class="spojivach__card">
                                 <div class="spojivach-card__icon"><img src="img/icon/Publ_Dogovor.svg" alt=""></div>
                                 <div class="spojivach-card__title">Публічні договори</div>
@@ -256,7 +259,9 @@
                         <div class="popup__title">Довідкова інформація</div>
                         <div class="popup__text">     
                             <div class="widget-show">
-                                <button class="collapsible">Договір розстрочки</button>
+                                <!-- <button class="collapsible">Договір розстрочки</button> -->
+                                <button class="collapsible">Договір розстрочки<div class="arrow__bottom-container-popup"><div class="arrow__bottom-popup"></div></div></button>
+                                
                                 <div class="hidden-widget">
                                     <p></p>
                                     <p>Для укладання з КП «Водоканал» «Договору про розстрочку сплати заборгованості за надані послуги з централізованого
@@ -1205,59 +1210,85 @@
                     <div class="news">
                         <div class="news__title"><h2 class="goto__novini">Новини</h2></div>
                         <div class="news__container">
-                            <!-- <img src="img/reconstruktion.png" alt=""> -->
+                            <div class="novini-block">
+                                <div class="novini-block__img"><img src="img/news/news1.png" alt="Тут повинно бути зображення"></div>
+                                <div class="novini-block__title">Нагадуємо, що наші облікові бази закриті для передачі показників</div>
+                                <div class="novini-block__date">01.12.2022</div>
+                            </div>
+        
+                            <div class="novini-block">
+                                <div class="novini-block__img"><img src="img/news/news2.png" alt="Тут повинно бути зображення"></div>
+                                <div class="novini-block__title">Як оплатити послуги водопостачання за відсутності світла та інтернету?</div>
+                                <div class="novini-block__date">30.11.2022</div>
+                            </div>
+        
+                            <div class="novini-block">
+                                <div class="novini-block__img"><img src="img/news/news3.png" alt="Тут повинно бути зображення"></div>
+                                <div class="novini-block__title">Не забудьте передати показання лічильників до кінця місяця</div>
+                                <div class="novini-block__date">29.11.2022</div>
+                            </div>
+                        </div>
+
+                        <div class="container__href">
+                            <a href="novini.html">Переглянути всі новини</a>
                         </div>
                     </div>
             </div> 
     
 <!-- ***************************** Footer ************************************ -->
-<footer>
-    <div class="container__background-color">
-        <div class="container__footer">
-            <div class="block__footer">
+        <footer>
+            <div class="container__background-color">
+                <div class="container__footer">
+                    <div class="block__footer">
 
-                <div class="footer__item">
-                    <div class="item-logo"><a href="index.html"><img src="img/logo-footer.png" alt="Логотип"></div></a>
-                    <div class="item-logotitle">КП “ВОДОКАНАЛ”</div>
-                </div>
+                        <div class="footer__item">
+                            <div class="item-logo"><a href="index.html"><img src="img/logo-footer.png" alt="Логотип"></div></a>
+                            <div class="item-logotitle">КП “ВОДОКАНАЛ”</div>
+                        </div>
 
-                <div class="footer__item">
-                    <div class="item-title">Адреса</div>
-                    <p>69002,</p>
-                    <p>м. Запоріжжя,</p>
-                    <p>вул. Святого Миколая, 61</p>
-                </div>
+                        <div class="footer__item">
+                            <div class="item-title">Адреса</div>
+                            <p>69002,</p>
+                            <p>м. Запоріжжя,</p>
+                            <p>вул. Святого Миколая, 61</p>
+                        </div>
 
-                <div class="footer__item">
-                    <div class="item-title">Телефон</div>
-                    <p>(061) 222-14-52</p>
-                    <div class="item-title">Електронна пошта</div>
-                    <p>info.vodokanal@zp.gov.ua</p>
-                </div>
+                        <span class="border__bottom"></span>
 
-                <div class="footer__item">
-                    <div class="item-title">Робочі години</div>
-                    <p>08:00-17:00 пн-чт</p>
-                    <p>08:00-15:45 пт</p>
-                    <p>12:00-12:45 - перерва</p>
-                    <p>сб,нд - вихідний</p>
-                </div>
+                        <div class="footer__item">
+                            <div class="item-title">Телефон</div>
+                            <p>(061) 222-14-52</p>
+                            <div class="item-title">Електронна пошта</div>
+                            <p>info.vodokanal@zp.gov.ua</p>
+                        </div>
 
-                <div class="footer__item">
-                    <div class="item__title-icon">
-                        <div class="item-title">Ми є у Facebook</div>
-                        <div class="item-icon"><a target="_blank" href="https://www.facebook.com/groups/2015289968753759"><img src="img/icon/contacts/facebook.png"></div></a>
+                        <span class="border__bottom"></span>
+
+                        <div class="footer__item">
+                            <div class="item-title">Робочі години</div>
+                            <p>08:00-17:00 пн-чт</p>
+                            <p>08:00-15:45 пт</p>
+                            <p>12:00-12:45 - перерва</p>
+                            <p>сб,нд - вихідний</p>
+                        </div>
+
+                        <span class="border__bottom"></span>
+
+                        <div class="footer__item">
+                            <div class="item__title-icon">
+                                <div class="item-title">Ми є у Facebook</div>
+                                <div class="item-icon"><a target="_blank" href="https://www.facebook.com/groups/2015289968753759"><img src="img/icon/contacts/facebook.png"></div></a>
+                            </div>
+
+                            <div class="item__title-icon">
+                                <div class="item-title-bot">Передати покази за допомогою чат-ботів</div>
+                                <div class="item-icon"><a target="_blank" href="https://t.me/GKH_IN_UA_BOT"><img src="img/icon/contacts/telegram.png"></a><a target="_blank" href="viber://pa?chatURI=gkh_in_ua"><img src="img/icon/contacts/viber.png"></div></a>
+                            </div>
+
                     </div>
-
-                    <div class="item__title-icon">
-                        <div class="item-title-bot">Передати покази за допомогою чат-ботів</div>
-                        <div class="item-icon"><a target="_blank" href="https://t.me/GKH_IN_UA_BOT"><img src="img/icon/contacts/telegram.png"></a><a target="_blank" href="viber://pa?chatURI=gkh_in_ua"><img src="img/icon/contacts/viber.png"></div></a>
-                    </div>
-
+                </div>
             </div>
-        </div>
-    </div>
-</footer>
+        </footer>
 
 </div>
 </body>

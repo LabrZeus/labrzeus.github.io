@@ -41,6 +41,16 @@ if (isMobile.any()) {
         }
     }
 
+    let menuMobile = document.querySelectorAll('.menu__mobile');
+    if (menuMobile.length > 0) {
+        for (let index = 0; index < menuMobile.length; index++) {
+            const menuArrow = menuMobile[index];
+            menuArrow.addEventListener("click", function (e) {
+                menuArrow.parentElement.classList.toggle('_active-menu-arrow');
+            })
+        }
+    }
+
 } else {
     document.body.classList.add('_pc');
 }
