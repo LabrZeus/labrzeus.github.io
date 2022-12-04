@@ -20,13 +20,22 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 .menu li{list-style: none;}
 html::-webkit-scrollbar { width: 0; } /* спрятать скролбар со всей страницы */
 html::-webkit-scrollbar { scrollbar-width: none;} /*для мозилы*/
-a{ color: #2487CE; }
+
+a {
+    color: #2487CE;
+}
 .bold {
     font-weight: 600;
     padding-bottom: 10px;
 }
 .italic {
     font-style: italic;
+}
+.circle-marker {
+    list-style-type: circle;
+}
+.padding-left {
+    padding-left: 20px;
 }
 /* Конец дополнительных настроек*/
 
@@ -1306,9 +1315,8 @@ body.lock {
 }
 .popup__title {
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 28px;
-    width: 96%;
     line-height: 39px;
     margin-bottom: 30px;
 }
@@ -1316,9 +1324,9 @@ body.lock {
     font-size: 16px;
     line-height: 22px;
 }
-/* .popup__text a{
-    color: #2487CE;
-} */
+.popup__text  .circle-marker {
+    list-style-type: circle;
+}
 .hidden-widget table { 
     border: 1px solid black; /* Рамка вокруг таблицы */
     border-collapse: collapse; /* Отображать только одинарные линии */
@@ -1343,13 +1351,12 @@ body.lock {
     margin-bottom: 0px;
 }
 .form__komer-oblik {
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     background: #2487CE;
     border-radius: 4px;
 }
 .color__link-button {
-    margin: 20px 0px;
+    margin: 10px 0px;
 }
 .color__link-button a {
     color: #FFFFFF;
@@ -1371,21 +1378,31 @@ body.lock {
     padding-bottom: 10px;
 }
 
-/* отдельный стиль для карточек
-"Підключення до мережі"
- "Повірка приладів обліку" */
-#popup__Pidkluch-Voda,
-#popup__Priladi-Obliky,
-.popup__text ul li{
-    padding-left: 15px;
-}
 /* Mobile popUp */
 @media (max-width: 768px) {
     .popup__content {
-        padding: 20px;
+        padding: 10px;
     }
     .widget-show {
         padding: 15px;
+    }
+    .popup__close {
+        font-size: 45px;
+    }
+    .popup__title {
+        width: 92%;
+        width: 80%;
+        line-height: 30px;
+        /* margin: 15px 0px 30px 0px; */
+        margin: 15px 0px 30px 30px;
+    }
+    .popup__button {
+        padding: 30px 0px 10px 0px;
+    }
+}
+@media (max-width: 576px) {
+    .color__link-button {
+        text-align: center;
     }
 }
 /**************************** The end - popUp ****************************/
@@ -1417,7 +1434,7 @@ body.lock {
     padding: 16px;
     text-align: left;
     font-size: 16px;
-    font-weight: 700;
+    /* font-weight: 700; */
     cursor: pointer;
     border-radius: 10px;
     display: flex;
@@ -1455,6 +1472,26 @@ body.lock {
 .change__style-button-popup > .arrow__bottom-container-popup .arrow__bottom-popup {
     transform: rotate(-45deg);
     margin-top: 5px;
+}
+
+/* без отступа для данной карточки, из-за таблицы */
+#popup__Komer-Oblik .hidden-widget {
+    padding: 0px 1px;
+}
+/* написать что это моб версия и задать правильный размер ширины */
+@media (max-width: 576px) {
+    .hidden-widget {
+        padding: 0px 10px;
+    }
+    .hidden-widget th {
+        padding: 1px;
+        word-break: break-word;
+        font-weight: 600;
+    }
+    .hidden-widget table {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }
 /******************** Конец выпадающего списка в popup **********************/
 
@@ -1907,13 +1944,9 @@ body.lock {
     list-style-type: none;
     padding-left: 20px;
 } */
-.padding-left {
-    padding-left: 20px;
-}
 .pitanya__vidpovidi .style-circle li {
     list-style-type: circle;
 }
-
 
 
 /*Вакансії*/
