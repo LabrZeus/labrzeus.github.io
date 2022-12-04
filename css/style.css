@@ -1452,7 +1452,6 @@ body.lock {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 0px 0px 10px 10px;
 }
-/* стрелка на кнопке белая > синяя */
 .arrow__bottom-popup {    
     width: 15px;
     height: 15px;
@@ -1467,18 +1466,24 @@ body.lock {
     color: white;
 }
 .arrow__bottom-container-popup {
+    margin: auto 0;
+    padding-left: 15px;
 }
 /* смена стилей стрелки при нажатии */
-.change__style-button-popup > .arrow__bottom-container-popup .arrow__bottom-popup {
+.change__style-collapsible .arrow__bottom-popup {
     transform: rotate(-45deg);
     margin-top: 5px;
 }
-
 /* без отступа для данной карточки, из-за таблицы */
 #popup__Komer-Oblik .hidden-widget {
     padding: 0px 1px;
 }
-/* написать что это моб версия и задать правильный размер ширины */
+/* adaptive выпадающего списка в popUp */
+@media (max-width: 768px) {
+    .arrow__bottom-popup {
+        margin-right: 0px;
+    }
+}
 @media (max-width: 576px) {
     .hidden-widget {
         padding: 0px 10px;
