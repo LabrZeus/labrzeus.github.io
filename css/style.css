@@ -31,6 +31,9 @@ a {
 .italic {
     font-style: italic;
 }
+.disk-marker li {
+    list-style-type: disc;
+}
 .circle-marker {
     list-style-type: circle;
 }
@@ -74,9 +77,11 @@ footer {
     z-index: 2;
     display: flex;
     flex: 1 1 auto;
-    text-align: center;
     flex-direction: column;
     background-color: rgba(2, 2, 2, 0.237);
+    padding: 15% 0px 0px 0px;
+    align-items: center;
+    justify-content: end;
 }
 
 /*Видео-фон*/
@@ -368,7 +373,7 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
         display: block;
     }
     .menu__link {
-        font-size: 24px;
+        font-size: 22px;
     }
     .menu__sub-list {
         position: relative;
@@ -404,7 +409,7 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 }
 
 .full-screen__logo {
-    padding: 18% 0px 0px 0px;
+    
 }
 .full-screen__logo img {
     max-width: 100%;
@@ -415,10 +420,8 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 /* two cards on full-screen */
 .full-screen__cards {
     display: flex;
-    flex-direction: row;
-
-    margin: 0 auto;
-    padding: 39px 0px 0px 0px;
+    padding: 39px 0px 20px 0px;
+    justify-content: center;
 }
 .screen__block-container {
     max-width: 514px;
@@ -569,7 +572,10 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 }
 
 @media (max-width: 540px) {
-    
+    .full-screen__logo img {
+        height: 170px;
+        margin-top: 50px;
+    }
     .screen__block-container {
         min-width: 370px;
         width: 90%;
@@ -1659,6 +1665,8 @@ body.lock {
     border-radius: 2px;
 }
 .arrow__bottom-container {
+    margin: auto 0;
+    padding-left: 15px;
 }
 /* смена стилей стрелки при нажатии */
 .change__style-button > .arrow__bottom-container .arrow__bottom{
@@ -1720,9 +1728,6 @@ body.lock {
     }
     .top-block__title h1 {
         text-align: center;
-    }
-    .pitanya-ta-vidpovidi .arrow__bottom {
-        margin: 5px 0px 0px 10px;
     }
 }
 @media (max-width: 360px) {
