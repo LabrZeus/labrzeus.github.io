@@ -34,7 +34,7 @@ a {
 .disk-marker li {
     list-style-type: disc;
 }
-.circle-marker {
+.circle-marker li {
     list-style-type: circle;
 }
 .padding-left {
@@ -95,6 +95,20 @@ footer {
 }
 /*Конец видео-фона*/
 
+/*Картинка-фон в тёмной теме*/
+.background-image__dark-theme {
+    display: none;
+    position: absolute;
+    height: 100%;
+
+}
+.background-image__dark-theme img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+/*Конец - картинка-фон в тёмной теме*/
+
 /*Меню-навигация*/
 .header {
     position: fixed;
@@ -118,7 +132,7 @@ footer {
     z-index: 5;
 }
 .header__logo img {
-    width: 40px;
+    width: 50px;
     height: 50px;
 }
 .header__menu {
@@ -809,18 +823,14 @@ h2 {
 .poslugi__card {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     align-items: flex-start;
     padding: 25px;
     gap: 15px;
     margin: 0px 0px 25px 0px;
-
     flex: 0 1 32%;
     max-width: 373px;
     height: 350px;
-
-    background: rgba(255, 255, 255, 0.46);
-
+    background: rgba(255, 255, 255);
     /* Shadow */
     box-shadow: 0px 0px 18px -5px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
@@ -923,7 +933,7 @@ h2 {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.container__href {
+/* .container__href {
     display: flex;
     font-size: 20px;
     justify-content: center;
@@ -952,7 +962,7 @@ h2 {
     transform: scaleX(0);
     transition: transform 0.33s;
     transform-origin: left;
-}
+} */
 /* The end - News*/
 
 
@@ -1218,7 +1228,7 @@ body.lock {
     color: #2F71A3;
     overflow: hidden;
     padding: 10px 25px;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 17px;
     line-height: 21px;
 }
@@ -1514,8 +1524,7 @@ body.lock {
     list-style-position: inside;
 }
 .body__container {
-    /* margin: 60px 0px 60px 0px; */
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .top__block {
@@ -1555,11 +1564,11 @@ body.lock {
 }
 .other-pages__container p {
     padding-bottom: 10px;
-    line-height: 25px;
+    line-height: 20px;
 }
 .other-pages__container li {
-    padding-bottom: 15px;
-    /* line-height: 25px; */
+    padding-bottom: 10px;
+    line-height: 20px;
 }
 .other-pages__container h3 {
     padding: 15px 0px 15px 0px;
@@ -1580,16 +1589,23 @@ body.lock {
 }
 .container__office-contacts {
     display: flex;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+}
+.office-contacts__title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 30px;
+    font-size: 20px;
 }
 .office-contacts__text {
     flex: 1 1 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     padding: 20px;
-    margin-left: 40px;
+    margin-left: 30px;
 }
 .office-contacts__map {
     flex: 1 1 50%;
@@ -1723,6 +1739,10 @@ body.lock {
     }
 }
 @media (max-width: 576px) {
+    /* измнения отступа в контейнере с текстом */
+    .hidden-widget__container {
+        padding: 10px;
+    }
     .top__block {
         flex-direction: column;
     }
@@ -1900,10 +1920,10 @@ body.lock {
     margin-bottom: 30px;
 }
 .kerivnictvo-block {
-    margin: 30px 0px 30px 0px;
+    margin: 20px 0px 20px 0px;
 }
 .kerivnictvo-block__person {
-    padding-bottom: 25px;
+    padding-bottom: 20px;
 }
 .kerivnictvo-block__title {
     text-align: center;
@@ -1918,8 +1938,8 @@ body.lock {
     line-height: 30px;
 }
 .kerivnictvo-block__text {
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 20px;
 }
 /* adaptive */
 @media (max-width: 1200px) {
@@ -1937,6 +1957,9 @@ body.lock {
 @media (max-width: 360px) {
 
 }
+/* --------------------------------- */
+
+
 
 /* Питання та відповіді */
 .pitanya__vidpovidi ol li {
@@ -1957,13 +1980,148 @@ body.lock {
 .pitanya__vidpovidi .style-circle li {
     list-style-type: circle;
 }
-
+/* --------------------------------- */
 
 /*Вакансії*/
-.vakancii__title {
+.vakancii-container {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin: 20px 0px 20px 0px;
+}
+.container__date {
+    display: flex;
+    justify-content: end;
+    font-weight: 500;
+    margin: 0px 10px;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.container__date {
+}
+.container__vakancii-title {
+    display: flex;
     font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+.vakancii-title__posada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 75%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+}
+.vakancii-title__kilkist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 10%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.vakancii-title__zarobitna-plata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 15%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+    word-break: break-word;
 }
 
+.container__vakancii-body {
+    display: flex;
+}
+.vakancii-body__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 1 75%;
+
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+}
+.vakancii-body__block-title {
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.vakancii-body__block-subtitle {
+    font-weight: 600;
+    padding-bottom: 10px;
+}
+.vakancii-body__block-text {
+}
+.vakancii-body__kilkist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 10%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+}
+.vakancii-body__zarobitna-plata {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 15%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+/* adaptive Вакансії*/
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+    .container__date {
+        padding: 10px 0px 10px 0px;
+    }
+    .vakancii-container {
+        padding: 5px;
+    }
+}
+@media (max-width: 576px) {
+    .vakancii-title__kilkist {
+        min-width: 60px;
+    }
+    .vakancii-title__zarobitna-plata {
+        min-width: 76px;
+    }
+    .vakancii-body__kilkist {
+        min-width: 60px;
+    }
+    .vakancii-body__zarobitna-plata {
+        min-width: 76px;
+    }
+}
+@media (max-width: 360px) {
+
+}
+/* --------------------------------- */
 
 
 /*Новини*/
@@ -2003,6 +2161,18 @@ body.lock {
 .novini-block__date {
     font-style: italic;
 }
+.button-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 266px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 18px;
+    border: 1.5px solid #2F71A3;
+    border-radius: 5px;
+    color: #2F71A3;
+}
 /* adaptive Новини */
 @media (max-width: 1200px) {
 
@@ -2040,27 +2210,66 @@ body.lock {
 @media (max-width: 360px) {
 
 }
+/* --------------------------------- */
+
+
+
+
 
 
 /* тестовое переключение цвета темы */
 
 /* включение темы по установке в ОС */
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     body {
-        color: #fff;
-        background-color: #333;
+        color: #e2e3e7;
     }
+    .full-screen__video {
+        display: none;
+    }
+    .background-image__dark-theme {
+        display: block;
+    }
+    h2 {
+        color: #e2e3e7;
+    }
+    .wrapper {
+        background-color: #04070ed9;
+    }
+    .header {
+        background-color: #1e3554;
+    }
+    .screen__block {
+        background: #1e3554;
+    }
+    .button-test {
+        border: 1px solid #e2e3e7;
+        color: #000000;
+    }
+    .button-style a {
+        color: #000000;
+    }
+    .container__background-color {
+        background: #202124;
+    }
+    .poslugi__card,
+    .spojivach__card, 
+    .novini-block {
+        background: #292c31;
+        border: #e2e3e7 solid 1px;
+    }
+
     .menu {
-        background-color: rgba(6, 56, 92, 0.959);
+        /* background-color: rgba(6, 56, 92, 0.959); */
     }
     .collapsible__other-pages {
-        background-color: #333;
+        /* background-color: #333; */
     }
     .hidden-widget__container {
-        color: #fff;
-        background-color: #333;
+        /* color: #fff;
+        background-color: #333; */
     }
-} */
+}
 
 /* html.dark body {
     color: #fff;
