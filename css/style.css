@@ -222,6 +222,40 @@ footer {
 .menu__arrow {
     display: none;
 }
+
+/* кнопка сброса стиля на тёмной и светлой теме */
+.page__theme{
+	width: 30px;
+	height: 30px;
+	flex: 0 0 30px;
+	cursor: pointer;
+}
+.page__action{
+	position: relative;
+}
+.page__reset{
+	opacity: 0;
+	visibility: hidden;
+}
+.page__reset.active{
+	opacity: 1;
+	visibility: visible;
+}
+.page__reset::before{
+	content:"x";
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	width: 10px;
+	height: 10px;
+	font-size: 7px;
+	border-radius: 50%;
+	line-height: 10px;
+	color: #fff;
+	text-align: center;
+	background-color: #666;
+}
 /* ------------------------------- */
 body._touch .menu__list > li {
     display: flex;
@@ -2217,10 +2251,10 @@ body.lock {
 
 
 
-/* тестовое переключение цвета темы */
+/********************** переключение цвета темы ******************/
 
-/* включение темы по установке в ОС */
-@media (prefers-color-scheme: dark) {
+/* включение темы по установке в ОС устройства*/
+/* @media (prefers-color-scheme: dark) {
     body {
         color: #e2e3e7;
     }
@@ -2236,11 +2270,12 @@ body.lock {
     .wrapper {
         background-color: #04070ed9;
     }
-    .header {
+    .header,
+    .menu__sub-list {
         background-color: #1e3554;
     }
-    .screen__block {
-        background: #1e3554;
+    .screen__block-container {
+        background: #1e3554c9;
     }
     .button-test {
         border: 1px solid #e2e3e7;
@@ -2258,31 +2293,62 @@ body.lock {
         background: #292c31;
         border: #e2e3e7 solid 1px;
     }
+} */
+/* Тёмная тема */
 
-    .menu {
-        /* background-color: rgba(6, 56, 92, 0.959); */
-    }
-    .collapsible__other-pages {
-        /* background-color: #333; */
-    }
-    .hidden-widget__container {
-        /* color: #fff;
-        background-color: #333; */
-    }
+html.dark body {
+    color: #e2e3e7;
 }
+html.dark .full-screen__video {
+    display: none;
+}
+html.dark .background-image__dark-theme {
+    display: block;
+}
+html.dark h2 {
+    color: #e2e3e7;
+}
+html.dark .wrapper {
+    background-color: #04070ed9;
+}
+html.dark .header,
+.menu__sub-list {
+    background-color: #1e3554;
+}
+html.dark .screen__block-container {
+    background: #1e3554c9;
+}
+html.dark .button-test {
+    border: 1px solid #e2e3e7;
+    color: #000000;
+}
+html.dark .button-style a {
+    color: #000000;
+}
+html.dark .container__background-color {
+    background: #202124;
+}
+html.dark .poslugi__card,
+.spojivach__card, 
+.novini-block {
+    background: #292c31;
+    border: #e2e3e7 solid 1px;
+}
+/* --------------------------------- */
 
-/* html.dark body {
-    color: #fff;
-    background-color: #333;
-}
+
 html.light body {
-    color: #333;
-    background-color: #fff;
+	background-color: #fff;
+	color: #333;
 }
+/* --------------------------------- */
 html.dark .page__theme {
-    background: url('../img/icon/test_theme/sun.png') 0 0 / 100% no-repeat;
+	background: url('../img/icon/sun.svg') 0 0 / 100% no-repeat;
 }
 html.light .page__theme {
-    background: url('../img/icon/test_theme/moon.png') 0 0 / 100% no-repeat;
-} */
-/* конец - тестового переключения цвета темы */
+	background: url('../img/icon/moon.svg') 0 0 / 100% no-repeat;
+}
+
+
+
+/* конец - тестового переключения цвета темы
