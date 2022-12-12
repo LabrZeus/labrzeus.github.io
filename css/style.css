@@ -2367,16 +2367,40 @@ html.dark .poslugi__card,
     background: #292c31;
     border: #e2e3e7 solid 1px;
 }
+/* adaptive Тёмная тема и Светлая тема */
+@media (max-width: 768px) {
+    html.dark .page__theme {
+        transition: none;
+        width: 24px;
+        height: 24px;
+    }
+    html.dark .page__theme:hover {
+        transition: none;
+        width: 24px;
+        height: 24px;        
+    }
+    /* доубирать анимацию с моб версии */
+}
+
 /* для второстепенных страниц */
 html.dark .top-block__title {
-    background: linear-gradient(90deg, #4c8fb9 0%, #e2e3e7 100%);
+    background: linear-gradient(90deg, #1E3554 0.57%, #5EBAFF 100%);
 }
-html.dark .change__style-button {
+html.dark .top-block__title h1 {
+    color: #fff;
+}
+/* html.dark .change__style-button {
+    background-color: #1e3554;
+} */
+html.dark .collapsible__other-pages {
     background-color: #1e3554;
 }
-/* html.dark .collapsible__other-pages {
-    border: solid 1px #1e3554;
-} */
+html.dark .change__style-button {
+    background-color: #2487CE;
+}
+html.dark .hidden-widget__container {
+    background-color: #e2e3e7;
+}
 /* Светлая тема */
 html.light .page__theme:hover {
     width: 30px;
