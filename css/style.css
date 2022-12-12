@@ -100,6 +100,7 @@ footer {
     display: none;
     position: absolute;
     height: 100%;
+    width: 100%;
 
 }
 .background-image__dark-theme img {
@@ -124,7 +125,7 @@ footer {
     display: flex;
     padding: 0px 30px;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     min-height: 60px;
 }
 .header__logo {
@@ -137,6 +138,9 @@ footer {
 }
 .header__menu {
 }
+.header__icons {
+    display: flex;
+}
 .menu {
 }
 .menu__icon {
@@ -146,7 +150,7 @@ footer {
 }
 .menu__list {
     display: flex;
-    gap: 50px;
+    gap: 45px;
     text-transform: uppercase;
 }
 .menu__list > li {
@@ -224,14 +228,18 @@ footer {
 }
 
 /* кнопка сброса стиля на тёмной и светлой теме */
-.page__theme{
-	width: 30px;
-	height: 30px;
-	flex: 0 0 30px;
-	cursor: pointer;
-}
 .page__action{
 	position: relative;
+    margin: 0px 10px 0px 50px;
+    width: 25px;
+    height: 25px;
+}
+.page__theme{
+	width: 24px;
+	height: 24px;
+	flex: 0 0 24px;
+	cursor: pointer;
+    transition: 0.8s;
 }
 .page__reset{
 	opacity: 0;
@@ -255,6 +263,22 @@ footer {
 	color: #fff;
 	text-align: center;
 	background-color: #666;
+}
+/* Доступность для людей с огр. возм. */
+.availability__container {
+    position: relative;
+    margin: 0px 5px 0px 5px;
+    width: 25px;
+    height: 25px;
+}
+.availability__close {
+    width: 24px;
+	height: 24px;
+	flex: 0 0 24px;
+	cursor: pointer;
+    transition: 0.8s;
+}
+.availability__open {
 }
 /* ------------------------------- */
 body._touch .menu__list > li {
@@ -2294,8 +2318,13 @@ body.lock {
         border: #e2e3e7 solid 1px;
     }
 } */
-/* Тёмная тема */
 
+/* Тёмная тема */
+html.dark .page__theme:hover {
+    width: 30px;
+    height: 30px;
+    transition: 1s;
+}
 html.dark body {
     color: #e2e3e7;
 }
@@ -2315,12 +2344,16 @@ html.dark .header,
 .menu__sub-list {
     background-color: #1e3554;
 }
+html.dark .menu__sub-list {
+    background-color: #1e3554;
+}
 html.dark .screen__block-container {
     background: #1e3554c9;
 }
 html.dark .button-test {
     border: 1px solid #e2e3e7;
     color: #000000;
+    background: #e2e3e7;
 }
 html.dark .button-style a {
     color: #000000;
@@ -2334,12 +2367,33 @@ html.dark .poslugi__card,
     background: #292c31;
     border: #e2e3e7 solid 1px;
 }
-/* --------------------------------- */
-
-
-html.light body {
-	background-color: #fff;
-	color: #333;
+/* для второстепенных страниц */
+html.dark .top-block__title {
+    background: linear-gradient(90deg, #4c8fb9 0%, #e2e3e7 100%);
+}
+html.dark .change__style-button {
+    background-color: #1e3554;
+}
+/* html.dark .collapsible__other-pages {
+    border: solid 1px #1e3554;
+} */
+/* Светлая тема */
+html.light .page__theme:hover {
+    width: 30px;
+    height: 30px;
+    transition: 0.8s;
+}
+html.light .poslugi__card,
+.spojivach__card, 
+.novini-block {
+    background: none;
+}
+html.light .poslugi__card {
+    background: rgba(255, 255, 255);
+}
+html.light .header,
+.menu__sub-list {
+    background-color: #2F71A3;
 }
 /* --------------------------------- */
 html.dark .page__theme {
@@ -2348,7 +2402,19 @@ html.dark .page__theme {
 html.light .page__theme {
 	background: url('../img/icon/moon.svg') 0 0 / 100% no-repeat;
 }
+/* конец - переключения цвета темы */
 
-
-
-/* конец - тестового переключения цвета темы
+/* Доступность */
+.availability__container {
+}
+.availability__close {
+    background: url('../img/icon/not-visible.svg') 0 0 / 100% no-repeat;
+}
+.availability__close:hover {
+    width: 30px;
+    height: 30px;
+    transition: 0.8s;
+}
+.availability__open {
+}
+/* конец - Доступности */
