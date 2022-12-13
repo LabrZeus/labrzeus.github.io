@@ -230,16 +230,12 @@ footer {
 /* кнопка сброса стиля на тёмной и светлой теме */
 .page__action{
 	position: relative;
-    margin: 0px 10px 0px 50px;
-    width: 25px;
-    height: 25px;
 }
 .page__theme{
-	width: 24px;
-	height: 24px;
-	flex: 0 0 24px;
+	width: 20px;
+	height: 20px;
+	/* flex: 0 0 24px; */
 	cursor: pointer;
-    transition: 0.8s;
 }
 .page__reset{
 	opacity: 0;
@@ -268,15 +264,14 @@ footer {
 .availability__container {
     position: relative;
     margin: 0px 5px 0px 5px;
-    width: 25px;
-    height: 25px;
+    width: 24px;
+    height: 24px;
 }
 .availability__close {
     width: 24px;
 	height: 24px;
 	flex: 0 0 24px;
 	cursor: pointer;
-    transition: 0.8s;
 }
 .availability__open {
 }
@@ -496,9 +491,7 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
     justify-content: center;
 }
 .screen__block-container {
-    max-width: 514px;
-    /* height: 253px; */
-
+    max-width: 550px;
     margin: 0 14px 0 14px;
     background: rgba(36, 135, 206, 0.7);
     border-radius: 5px;
@@ -509,6 +502,9 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 .block__title {
     font-size: 32px;
     padding: 26px 0px 10px 0px;
+}
+.title__container {
+    max-width: 410px;
 }
 .block__item {
     display: flex;
@@ -1623,6 +1619,7 @@ body.lock {
 .other-pages__container p {
     padding-bottom: 10px;
     line-height: 20px;
+    padding-top: 10px;
 }
 .other-pages__container li {
     padding-bottom: 10px;
@@ -1724,6 +1721,9 @@ body.lock {
     justify-content: space-between;
 }
 
+/* .collapsible__other-pages:last-child {
+    border-bottom: solid 1px #2487CE;
+} */
 /* смена стилей кнопки при нажатии */
 .change__style-button {
     background-color: #2487CE;
@@ -1765,6 +1765,8 @@ body.lock {
 .hidden-widget__container {
     display: flex;
     padding: 25px;
+
+    flex-direction: column;
 }
 .hidden-widget__container-text {
     flex: 1 1 50%;
@@ -1820,7 +1822,11 @@ body.lock {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 10px;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
+/* .povidomlenya-container .collapsible__other-pages:last-child {
+    border-bottom: solid 1px #2487CE;
+} */
 .povidomlenya-container__text {
 }
 .povidomlenya-container__date {
@@ -1916,13 +1922,6 @@ body.lock {
     shape-margin:20px;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
-}
-
-
-
-.hidden-widget__container-text-with-marker li {
-    list-style-type: disc;
-    list-style-position: inside; 
 }
 
 
@@ -2321,9 +2320,6 @@ body.lock {
 
 /* Тёмная тема */
 html.dark .page__theme:hover {
-    width: 30px;
-    height: 30px;
-    transition: 1s;
 }
 html.dark body {
     color: #e2e3e7;
@@ -2371,13 +2367,9 @@ html.dark .poslugi__card,
 @media (max-width: 768px) {
     html.dark .page__theme {
         transition: none;
-        width: 24px;
-        height: 24px;
     }
     html.dark .page__theme:hover {
-        transition: none;
-        width: 24px;
-        height: 24px;        
+        transition: none;      
     }
     /* доубирать анимацию с моб версии */
 }
@@ -2403,9 +2395,6 @@ html.dark .hidden-widget__container {
 }
 /* Светлая тема */
 html.light .page__theme:hover {
-    width: 30px;
-    height: 30px;
-    transition: 0.8s;
 }
 html.light .poslugi__card,
 .spojivach__card, 
@@ -2435,9 +2424,8 @@ html.light .page__theme {
     background: url('../img/icon/not-visible.svg') 0 0 / 100% no-repeat;
 }
 .availability__close:hover {
-    width: 30px;
-    height: 30px;
-    transition: 0.8s;
+    width: 24px;
+    height: 24px;
 }
 .availability__open {
 }
