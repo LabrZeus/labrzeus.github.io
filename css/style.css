@@ -14,12 +14,15 @@ a:hover{text-decoration: none;}
 ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+html, body {line-height: normal;}
 
 /*Дополнительное настройки*/
 .menu a{text-decoration: none;}
 .menu li{list-style: none;}
-html::-webkit-scrollbar { width: 0; } /* спрятать скролбар со всей страницы */
-html::-webkit-scrollbar { scrollbar-width: none;} /*для мозилы*/
+/* html::-webkit-scrollbar { width: 0; }  */
+/* спрятать скролбар со всей страницы */
+/* html::-webkit-scrollbar { scrollbar-width: none;}  */
+/*для мозилы*/
 
 a {
     color: #2487CE;
@@ -125,7 +128,7 @@ footer {
     display: flex;
     padding: 0px 30px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     min-height: 60px;
 }
 .header__logo {
@@ -197,6 +200,7 @@ footer {
     border-bottom: 1px solid rgba(28, 75, 111, 0.73);
     font-size: 15px;
     padding-top: 30px;
+    text-transform: initial;
 }
 .menu__sub-list a::before{
     content: '';
@@ -343,6 +347,15 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
     }
 }
 @media (max-width: 768px) {
+    .menu__body {
+        border-top: solid 1px white;
+    }
+    .menu__body._active-menu-arrow {
+        top: 60px;
+    }
+    /* .menu__body._active-menu-arrow {
+        border-top: solid 1px white;
+    } */
     .header__container {
         justify-content: space-between;
     }
@@ -395,8 +408,8 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
         left: -100%;
         width: 100%;
         height: 100%;
-        background-color: rgba(47, 113, 163, 0.92);
-        padding: 100px 30px 30px 30px;
+        background-color: rgba(47, 113, 163);
+        padding: 50px 20px 30px 30px;
         transition: left 0.3s ease 0s;
         overflow: auto;
     }
@@ -503,9 +516,14 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
     font-size: 32px;
     padding: 26px 0px 10px 0px;
 }
+
+/* включить данный контейнер в основной контейнер тайтла на всех страницах */
 .title__container {
     max-width: 410px;
 }
+
+
+
 .block__item {
     display: flex;
     align-items: flex-end;
@@ -558,7 +576,7 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 
 
 .item__button {
-    padding-right: 42px;
+    /* padding-right: 42px; */
     font-weight: 500;
 }
 .button {
@@ -581,20 +599,24 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
 
 
 
-
-
-@media (max-width: 1600px) {
-    /* .full-screen__logo {
-    padding: 230px 0px 0px 0px;
-    } */
+@media (max-width: 1200px) {
+    .item__link {
+        font-size: 15px;
+    }
+    .block__item {
+        padding: 20px 11px 20px 11px;
+    }
+    .button {
+        width: 190px;
+    }
 }
-@media (max-width: 1400px) {
-    /* .full-screen__logo {
-    padding: 220px 0px 0px 0px;
-    } */
-}
-
 @media (max-width: 992px) {
+    .menu__list {
+        gap: 9px;
+    }
+    .menu__list {
+        padding-left: 0px;
+    }
     .full-screen__cards {
         flex-wrap: wrap;
         justify-content: center;
@@ -624,7 +646,7 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
         width: 210px;
     }
     .item__button {
-        margin: 30px 0px;
+        margin: 20px 0px 30px 0px;
         padding: 0px;
     }
 }
@@ -638,7 +660,6 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
         width: 100%;
     }
 }
-
 @media (max-width: 540px) {
     .full-screen__logo img {
         height: 170px;
@@ -668,7 +689,6 @@ body._touch .menu__list > li._active-menu-arrow .menu__arrow {
         line-height: 40px;
     }
 }
-
 @media (max-width: 400px) {
     .screen__block {
         min-width: 0px;
@@ -714,11 +734,8 @@ h2 {
 }
 .button-card {
     display: flex;
-    /* flex-direction: row; */
     justify-content: center;
     align-items: center;
-    /* padding: 10.7222px 25.4653px; */
-    /* gap: 6.7px; */
     width: 120px;
     height: 36px;
     background: #2487CE;
@@ -786,12 +803,6 @@ h2 {
 .spojivach-card__button {}
 
 
-/* @media (max-width: 1400px) {
-    .spojivach__card {
-        margin: 11px;
-        flex: 1 1 48%;
-    }
-} */
 @media (max-width: 1200px) {
     .spojivach__card {
         margin: 14px;
@@ -825,9 +836,6 @@ h2 {
         line-height: 22px;
         height: max-content;
     }
-    /* .spojivach-card__button {
-        display: none;
-    } */
     /* !!!!сделать ссылка карточка начиная с данного размера!!!! */
 }
 @media (max-width: 576px) {
@@ -850,9 +858,6 @@ h2 {
         padding: 10px;
     }
 }
-/* нужно каждой карточке задать минимальную ширину,
-        подрезать высоту и менять отступы.
-        Возможно нужно изменить % флекса */
 /* The end - Storinka spojivacha*/
 
 
@@ -911,9 +916,6 @@ h2 {
 .poslugi-card__text p {
     padding-bottom: 5px;
 }
-/* .poslugi-card__text ul {
-    padding-left: 15px;
-} */
 .poslugi-card__button {
 }
 .button-card {
@@ -926,6 +928,9 @@ h2 {
 @media (max-width: 1200px) {
     .poslugi__card {
         padding: 15px 13px;
+    }
+    .poslugi-card__title {
+        height: 94px;
     }
 }
 @media (max-width: 992px) {
@@ -947,6 +952,7 @@ h2 {
     }
     .poslugi-card__title {
         font-size: 20px;
+        height: 30px;
     }
     .poslugi-card__text {
         padding: 0px 0px 0px 20px;
@@ -957,7 +963,6 @@ h2 {
     .poslugi-card__button {
         display: none;
     }
-    /* !!!!сделать ссылка карточка начиная с данного размера!!!! */
 }
 @media (max-width: 576px) {
 
@@ -1019,85 +1024,6 @@ h2 {
 } */
 /* The end - News*/
 
-
-
-
-
-/* Footer*/
-
-/* старый футер */
-
-/* .contacts {
-}
-.contacts__title {
-}
-.contacts__container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0px 15px 30px 15px;
-}
-.contacts__block-items {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-}
-.contacts__item {
-    display: flex;
-    align-items: center;
-}
-.contacts-item__icon {
-    margin: 27px 15px 0px 0px;
-}
-.contacts-item__icon img {
-    vertical-align: top;
-}
-.contacts-item__block {
-    padding: 30px 0px 0px 0px;
-}
-.contacts-block__title {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-}
-.contacts-block__text {
-    font-size: 18px;
-    line-height: 22px;
-}
-.contacts__block-map {
-    
-}
-
-
-@media (max-width: 1400px) {
-    .contacts-item__block {
-        padding: 24px 0px 0px 0px;
-    }
-}
-@media (max-width: 1200px) {
-    .contacts__block-items {
-        flex: 0 1 35%;    
-    }
-}
-@media (max-width: 992px) {
-    .contacts__block-items {
-        flex: 0 0 56%;
-    }
-    .contacts__block-map {
-        padding-top: 30px;
-        margin: 0 auto;
-    }
-}
-@media (max-width: 768px) {
-
-}
-@media (max-width: 655px) {
-    .contacts__block-map iframe{
-        width: 100%;
-        margin-right: 30px;
-    }
-} */
-/* конец старого футера */
 
 
 /* новый футер */
@@ -1242,9 +1168,6 @@ h2 {
     .item-icon img {
         padding-top: 10px;
     }
-    /* .item-title-bot {
-        width: 80px;
-    } */
 }
 @media (max-width: 360px) {
 
@@ -1343,7 +1266,6 @@ body.lock {
     visibility: visible;
 }
 .popup.open .popup__content {
-    /* transform: perspective(600px) translate(0px, 0%) rotateX(0deg); */
     transform: translate(0px, 0px);
     opacity: 1;
 }
@@ -1366,13 +1288,12 @@ body.lock {
     margin-top: 40px;
     background-color: #fff;
     color: #101010;
-    max-width: 1050px;
+    max-width: 1100px;
     padding: 40px;
     position: relative;
     border-radius: 10px;
     transition: all 1s ease 0s;
     opacity: 0;
-    /* transform: perspective(600px) translate(0px, -100%) rotateX(45deg); */
     transform: translate(0px, -100%);
 }
 .popup__close {
@@ -1463,7 +1384,6 @@ body.lock {
         width: 92%;
         width: 80%;
         line-height: 30px;
-        /* margin: 15px 0px 30px 0px; */
         margin: 15px 0px 30px 30px;
     }
     .popup__button {
@@ -1484,18 +1404,6 @@ body.lock {
 
 
 /************************ Выпадающий список в popup **************************/
-/* .collapsible {
-    background-color: #2487CE;
-    color: white;
-    padding: 16px;
-    text-align: left;
-    font-size: 16px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-    width: 100%;
-} */
 .collapsible {
     background-color: #2487CE;
     color: #fff;
@@ -1720,10 +1628,12 @@ body.lock {
     display: flex;
     justify-content: space-between;
 }
-
-/* .collapsible__other-pages:last-child {
+/* для последней кнопки "collapsible__other-pages"
+и выпадающег осписка "hidden-widget__container",
+las-child не работает во всех случаях */
+.border-bottom {
     border-bottom: solid 1px #2487CE;
-} */
+}
 /* смена стилей кнопки при нажатии */
 .change__style-button {
     background-color: #2487CE;
@@ -1751,8 +1661,6 @@ body.lock {
 }
 
 .hidden-widget__other-pages {
-    
-    /* padding: 0px 18px; */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -1767,7 +1675,7 @@ body.lock {
     display: flex;
     padding: 25px;
 }
-.teh-umovi__direction {
+.direction__column {
     flex-direction: column;
 }
 .hidden-widget__container-text {
@@ -1832,7 +1740,6 @@ body.lock {
 .povidomlenya-container__text {
 }
 .povidomlenya-container__date {
-    margin-top: 30px;
     font-weight: 600;
 }
 
@@ -1843,8 +1750,6 @@ body.lock {
     margin-bottom: 30px;
 }
 .voda__title {
-    /* display: flex;
-    justify-content: center; */
     text-align: center;
     font-size: 24px;
     font-weight: 500;
@@ -2000,22 +1905,6 @@ body.lock {
     font-size: 15px;
     line-height: 20px;
 }
-/* adaptive */
-@media (max-width: 1200px) {
-
-}
-@media (max-width: 992px) {
-
-}
-@media (max-width: 768px) {
-
-}
-@media (max-width: 576px) {
-
-}
-@media (max-width: 360px) {
-
-}
 /* --------------------------------- */
 
 
@@ -2069,24 +1958,11 @@ body.lock {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 1 75%;
+    flex: 0 1 85%;
     line-height: 18px;
     padding: 20px 5px 20px 5px;
     border: solid #CEECFF42 3px;
     background: #CEECFF42;
-}
-.vakancii-title__kilkist {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 1 10%;
-    line-height: 18px;
-    padding: 20px 5px 20px 5px;
-    border: solid #CEECFF42 3px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-    background: #CEECFF42;
-    word-break: break-word;
 }
 .vakancii-title__zarobitna-plata {
     display: flex;
@@ -2096,6 +1972,7 @@ body.lock {
     line-height: 18px;
     padding: 20px 5px 20px 5px;
     border: solid #CEECFF42 3px;
+    border-left-width: 0px;
     background: #CEECFF42;
     word-break: break-word;
 }
@@ -2107,7 +1984,7 @@ body.lock {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 0 1 75%;
+    flex: 0 1 85%;
 
     line-height: 18px;
     padding: 20px 5px 20px 5px;
@@ -2125,37 +2002,198 @@ body.lock {
 }
 .vakancii-body__block-text {
 }
-.vakancii-body__kilkist {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 0 1 10%;
-
-    padding: 20px 5px 20px 5px;
-    border: solid aliceblue 3px;
-    border-top-width: 0px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-}
 .vakancii-body__zarobitna-plata {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 1 15%;
+    text-align: center;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    word-break: break-word;
+}
+/* adaptive Вакансії*/
+@media (max-width: 768px) {
+    .vakancii-title__posada {
+        flex: 0 1 82%;
+    }
+    .vakancii-title__zarobitna-plata {
+        flex: 0 1 18%;
+    }
+    .vakancii-body__block {
+        flex: 0 1 82%;
+    }
+    .vakancii-body__zarobitna-plata {
+        flex: 0 1 18%;
+    }
+    .container__date {
+        padding: 10px 0px 10px 0px;
+    }
+    .vakancii-container {
+        padding: 5px;
+    }
+}
+/* .vakancii-body__block {
+    flex: 0 1 84%;
+} */
+@media (max-width: 576px) {
+    .vakancii-title__zarobitna-plata {
+        min-width: 76px;
+    }
+    .vakancii-body__zarobitna-plata {
+        min-width: 76px;
+    }
+}
+/* --------------------------------- */
+
+/*Бюджетні кошти*/
+.hidden-widget-container__budjetni-koshti {
+}
+.container__budjetni-koshti-title {
+    display: flex;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+.budjetni-koshti-title__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 4%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+}
+.budjetni-koshti-title__name-zahid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 44%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.budjetni-koshti-title__fin-rozmir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 13%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.budjetni-koshti-title__kilkistni-pokazniki {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 20%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.budjetni-koshti-title__stan-vikonanya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 19%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+
+.container__budjetni-koshti-body {
+    display: flex;
+}
+.budjetni-koshti-body__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 4%;
 
     padding: 20px 5px 20px 5px;
     border: solid aliceblue 3px;
     border-top-width: 0px;
     word-break: break-word;
 }
-/* adaptive Вакансії*/
-@media (max-width: 1200px) {
+.budjetni-koshti-body__name-zahid {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex: 0 1 44%;
 
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    word-break: break-word;
 }
-@media (max-width: 992px) {
+.budjetni-koshti-body__fin-rozmir {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 13%;
 
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    word-break: break-word;
 }
-@media (max-width: 768px) {
+.budjetni-koshti-body__kilkistni-pokazniki {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 20%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+.budjetni-koshti-body__stan-vikonanya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 19%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+.budjetni-koshti-body__razom {
+    flex: 0 1 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    font-weight: 600;
+    padding: 20px 5px 20px 25px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    background: #CEECFF42;
+}
+
+/* adaptive */
+/* @media (max-width: 768px) {
     .container__date {
         padding: 10px 0px 10px 0px;
     }
@@ -2164,30 +2202,207 @@ body.lock {
     }
 }
 @media (max-width: 576px) {
-    .vakancii-title__kilkist {
-        min-width: 60px;
-    }
     .vakancii-title__zarobitna-plata {
         min-width: 76px;
-    }
-    .vakancii-body__kilkist {
-        min-width: 60px;
     }
     .vakancii-body__zarobitna-plata {
         min-width: 76px;
     }
-}
-@media (max-width: 360px) {
+} */
+/* --------------------------------- */
 
+
+
+
+/***************************************Енергозбереження*****************************************/
+.container__energosberejennya-title {
+    display: flex;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+}
+.energosberejennya-title__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 4%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+}
+.energosberejennya-title__name-zahid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 82%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.energosberejennya-title__period-vikonanya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 14%;
+    line-height: 18px;
+    padding: 20px 5px 20px 5px;
+    border: solid #CEECFF42 3px;
+    background: #CEECFF42;
+    word-break: break-word;
+}
+.container__energosberejennya-body {
+    display: flex;
+}
+.energosberejennya-body__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 4%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+.energosberejennya-body__name-zahid {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    flex: 0 1 82%;
+
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+.energosberejennya-body__period-vikonanya {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 1 14%;
+
+    text-align: center;
+    padding: 20px 5px 20px 5px;
+    border: solid aliceblue 3px;
+    border-top-width: 0px;
+    word-break: break-word;
+}
+
+/* adaptive */
+@media (max-width: 1200px) {
+    .energosberejennya-title__number {
+        flex: 0 1 5%;
+    }
+    .energosberejennya-title__name-zahid {
+        flex: 0 1 81%;
+    }
+    .energosberejennya-body__number {
+        flex: 0 1 5%;
+    }
+    .energosberejennya-body__name-zahid {
+        flex: 0 1 81%;
+    }
+}
+@media (max-width: 992px) {
+    .energosberejennya-title__number {
+        flex: 0 1 6%;
+    }
+    .energosberejennya-title__name-zahid {
+        flex: 0 1 80%;
+    }
+    .energosberejennya-body__number {
+        flex: 0 1 6%;
+    }
+    .energosberejennya-body__name-zahid {
+        flex: 0 1 80%;
+    }
+}
+@media (max-width: 768px) {
+    .energosberejennya-title__number {
+        flex: 0 1 8%;
+    }
+    .energosberejennya-title__name-zahid {
+        flex: 0 1 73%;
+    }
+    .energosberejennya-title__period-vikonanya {
+        flex: 0 1 19%;
+    }
+    .energosberejennya-body__number {
+        flex: 0 1 8%;
+    }
+    .energosberejennya-body__name-zahid {
+        flex: 0 1 73%;
+    }
+    .energosberejennya-body__period-vikonanya {
+        flex: 0 1 19%;
+    }
+    .other-pages__container p {
+        padding: 0px;
+    }
+}
+@media (max-width: 576px) {
+    .other-pages__container {
+        padding: 0px 5px;
+    }
+    .energosberejennya-title__number {
+        flex: 0 1 12%;
+        padding: 2px;
+    }
+    .energosberejennya-title__name-zahid {
+        flex: 0 1 68%;
+    }
+    .energosberejennya-title__period-vikonanya {
+        flex: 0 1 20%;
+        padding: 2px;
+    }
+    .energosberejennya-body__number {
+        flex: 0 1 12%;
+    }
+    .energosberejennya-body__name-zahid {
+        flex: 0 68%;
+        padding: 5px;
+    }
+    .energosberejennya-body__period-vikonanya {
+        flex: 0 1 20%;
+    }
+    .other-pages__container p {
+        padding: 0px;
+    }
 }
 /* --------------------------------- */
 
 
+
+/*Доступ до інформації*/
+.dostup-do-inform__title {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0A63A6;
+    font-weight: 500;
+}
+.dostup-do-inform__title-in-block {
+    display: flex;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0A63A6;
+    font-weight: 500;
+}
+
 /*Новини*/
-.comtainer__novini {
+.container__novini {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: left;
+    gap: 20px;
 }
 .novini-block { 
     flex: 0 1 32%;
@@ -2202,6 +2417,10 @@ body.lock {
     background: rgba(255, 255, 255, 0.46);
     box-shadow: 0px 0px 18px -5px rgb(0 0 0 / 40%);
     border-radius: 10px;
+}
+.novini-block:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
 }
 .novini-block__img {
     display: flex;
@@ -2224,7 +2443,8 @@ body.lock {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 267px;
+    /* width: 267px; */
+    width: max-content;
     height: 50px;
     font-weight: 500;
     font-size: 18px;
@@ -2232,6 +2452,7 @@ body.lock {
     border-radius: 5px;
     color: #2F71A3;
 }
+.open-news {}
 /* adaptive Новини */
 @media (max-width: 1200px) {
 
@@ -2266,59 +2487,239 @@ body.lock {
         width: 100%;
     }
 }
-@media (max-width: 360px) {
-
-}
 /* --------------------------------- */
 
 
+/* Сторінка "Повідомлення iнвестиційної програми" */
+.povidomlenya-container__in-arhiv {
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
 
+
+/* Сторінка "Для нового споживача" */
+.container-block__step {
+    display: flex;
+    padding-bottom: 15px;
+}
+.container-out__novogo-spojivacha {
+        padding: 10px 0px 0px 0px;
+        box-shadow: 0 20px 20px -20px #333;  
+}
+.title__krok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 200px;
+    font-size: 24px;
+    font-weight: 500;
+}
+.style__novogo-spojivacha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container__novogo-spojivacha-row {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+.novogo-spojivacha__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #2487CE;
+    padding: 5px 15px;
+    margin: 0px 10px;
+    flex: auto;
+    min-width: 100px;
+    text-align: center;
+}
+.max220 {
+    max-width: 220px;
+}
+.max340 {
+    max-width: 340px;
+}
+.max700 {
+    max-width: 700px;
+}
+.color-red {
+    color: crimson;
+    font-size: 20px;
+}
+.container__novogo-spojivacha-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.block-column {
+    flex-direction: column;
+}
+.title-in-block__novogo-spojivacha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+/*стрелка в блоке по центру*/
+.novogo-spojivacha__bottom-arrow-center {
+position: relative;
+z-index: 5;
+}
+.novogo-spojivacha__bottom-arrow-center::after {
+content: '';
+width: 0;
+height: 0;
+display: block;
+position: absolute;
+z-index: 5;
+border: 0;
+}
+.novogo-spojivacha__bottom-arrow-center::after {
+border-left: 10px solid transparent;
+border-right: 10px solid transparent;
+margin-left: -10px;
+left: 50%;
+border-top: 12px solid #2487CE;
+bottom: -12px;
+}
+
+/*стили для контейнера c 2 или 3 стрелками*/
+.container__for-2-arrow {
+    flex: auto;
+    /* значение должно быть одинаковым со 2 контейнером */
+    min-width: 100px;
+}
+.max720 {
+    max-width: 720px;
+}
+
+/*стрелка в блоке справа, когда 2 блока*/
+.novogo-spojivacha__bottom-arrow-right {
+    position: relative;
+    z-index: 5;
+}
+.novogo-spojivacha__bottom-arrow-right::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    border: 0;
+    }
+    .novogo-spojivacha__bottom-arrow-right::after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-left: -10px;
+    left: 75%;
+    border-top: 12px solid #2487CE;
+    bottom: -12px;
+    }
+
+/*стрелка в блоке справа, когда 3 блока*/
+.novogo-spojivacha__bottom-arrow-right-3 {
+    position: relative;
+    z-index: 5;
+}
+.novogo-spojivacha__bottom-arrow-right-3::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    border: 0;
+    }
+    .novogo-spojivacha__bottom-arrow-right-3::after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-left: -10px;
+    left: 83%;
+    border-top: 12px solid #2487CE;
+    bottom: -12px;
+    }
+
+/*стрелка в блоке слева, когда 2 блока*/
+.novogo-spojivacha__bottom-arrow-left {
+    position: relative;
+    z-index: 5;
+}
+.novogo-spojivacha__bottom-arrow-left::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    border: 0;
+    }
+    .novogo-spojivacha__bottom-arrow-left::after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-left: -10px;
+    left: 25%;
+    border-top: 12px solid #2487CE;
+    bottom: -12px;
+    }
+
+/*стрелка в блоке слева, когда 3 блока*/
+.novogo-spojivacha__bottom-arrow-left-3 {
+    position: relative;
+    z-index: 5;
+}
+.novogo-spojivacha__bottom-arrow-left-3::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    position: absolute;
+    z-index: 5;
+    border: 0;
+    }
+    .novogo-spojivacha__bottom-arrow-left-3::after {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    margin-left: -10px;
+    left: 16%;
+    border-top: 12px solid #2487CE;
+    bottom: -12px;
+    }
+/* adaptive Для нового споживача */
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 576px) {
+    .container-block__step {
+        display: block;
+    }
+    .title__krok {
+        padding: 10px 0px 20px 0px;
+    }
+    .novogo-spojivacha__block {
+        min-width: 80px;
+    }
+}
 
 
 
 /********************** переключение цвета темы ******************/
 
 /* включение темы по установке в ОС устройства*/
-/* @media (prefers-color-scheme: dark) {
-    body {
-        color: #e2e3e7;
-    }
-    .full-screen__video {
-        display: none;
-    }
-    .background-image__dark-theme {
-        display: block;
-    }
-    h2 {
-        color: #e2e3e7;
-    }
-    .wrapper {
-        background-color: #04070ed9;
-    }
-    .header,
-    .menu__sub-list {
-        background-color: #1e3554;
-    }
-    .screen__block-container {
-        background: #1e3554c9;
-    }
-    .button-test {
-        border: 1px solid #e2e3e7;
-        color: #000000;
-    }
-    .button-style a {
-        color: #000000;
-    }
-    .container__background-color {
-        background: #202124;
-    }
-    .poslugi__card,
-    .spojivach__card, 
-    .novini-block {
-        background: #292c31;
-        border: #e2e3e7 solid 1px;
-    }
-} */
+/* @media (prefers-color-scheme: dark) {} */
 
 /* Тёмная тема */
 html.dark .page__theme:hover {
@@ -2338,8 +2739,7 @@ html.dark h2 {
 html.dark .wrapper {
     background-color: #04070ed9;
 }
-html.dark .header,
-.menu__sub-list {
+html.dark .header {
     background-color: #1e3554;
 }
 html.dark .menu__sub-list {
@@ -2349,21 +2749,9 @@ html.dark .screen__block-container {
     background: #1e3554c9;
 }
 html.dark .container__kerivnictvo-top,
-.container__kerivnictvo,
-.vakancii-container {
+html.dark .container__kerivnictvo {
     box-shadow: 0px 8px 16px 0px rgb(41 114 251 / 20%);
     background-color: #ffffff00;
-}
-html.dark .vakancii-title__posada {
-    border: solid aliceblue  3px;
-}
-html.dark .vakancii-title__kilkist {
-    border: solid aliceblue 3px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-}
-html.dark .vakancii-title__zarobitna-plata {
-    border: solid aliceblue 3px;
 }
 html.dark .button-test {
     border: 1px solid #2487CE;
@@ -2388,7 +2776,7 @@ html.dark .poslugi__card,
     background: #292c31;
     border: #e2e3e7 solid 1px;
 }
-/* adaptive Тёмная тема и Светлая тема */
+/* adaptive Тёмная тема */
 @media (max-width: 768px) {
     html.dark .page__theme {
         transition: none;
@@ -2396,7 +2784,12 @@ html.dark .poslugi__card,
     html.dark .page__theme:hover {
         transition: none;      
     }
-    /* доубирать анимацию с моб версии */
+    html.dark .menu__body {
+        background: rgba(30, 53, 84);
+    }
+    html.dark .menu__body::before {
+        background: #1e3554c9;
+    }
 }
 
 /* для второстепенных страниц */
@@ -2423,6 +2816,114 @@ html.dark .povidomlenya-container {
     box-shadow: 0px 8px 16px 0px rgb(41 114 251 / 20%);
     background-color: #ffffff00;
 }
+
+/* Тёмная тема - Сторінка "Вакансії" */
+html.dark .vakancii-container {
+    box-shadow: 0px 8px 16px 0px rgb(41 114 251 / 20%);
+    background-color: #ffffff00;
+}
+html.dark .vakancii-title__posada {
+    border: solid #CEECFF42  3px;
+}
+html.dark .vakancii-title__zarobitna-plata {
+    border: solid #CEECFF42  3px;
+}
+html.dark .vakancii-body__zarobitna-plata {
+    border: solid #CEECFF42  3px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+}
+html.dark .vakancii-body__block {
+    border: solid #CEECFF42  3px;
+    border-top-width: 0px;
+}
+html.dark .vakancii-title__zarobitna-plata {
+    border-left-width: 0px;
+}
+
+/* Тёмная тема - Сторінка "Повідомлення iнвестиційної програми" */
+html.dark .povidomlenya-container__in-arhiv {
+    box-shadow: 0px 8px 16px 0px rgb(41 114 251 / 20%);
+    background-color: #ffffff00;
+}
+
+/* Тёмная тема - Сторінка "Для нового споживача" */
+html.dark .container-out__novogo-spojivacha {
+    box-shadow: 0 20px 20px -20px rgb(41 114 251 / 20%);
+}
+
+/* Тёмная тема popUp */
+html.dark .popup__content {
+    background-color: #202124;
+    color: #e2e3e7;
+}
+html.dark .widget-show {
+    background-color: #292c31;
+}
+html.dark .collapsible {
+    background-color: #1e3554;
+    border: solid 1px #2487CE;
+}
+html.dark .hidden-widget {
+    background-color: #ffffff00;
+}
+html.dark .change__style-collapsible ~ .hidden-widget {
+    border: solid 1px #2487CE;
+    border-top-width: 0px;
+}
+html.dark .popup__close {
+    color: #e2e3e7;
+}
+
+/* Тёмная тема страницы "Бюджетні кошти" */
+html.dark .hidden-widget-container__budjetni-koshti {
+    background-color: #04070ed9;
+}
+html.dark .budjetni-koshti-body__number {
+    border: solid #CEECFF42 3px;
+    border-top-width: 0px;
+}
+html.dark .budjetni-koshti-body__name-zahid {
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+}
+html.dark .budjetni-koshti-body__fin-rozmir {
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+}
+html.dark .budjetni-koshti-body__kilkistni-pokazniki {
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    border-top-width: 0px;
+}
+html.dark .budjetni-koshti-body__stan-vikonanya {
+    border: solid #CEECFF42 3px;
+    border-top-width: 0px;
+}
+html.dark .budjetni-koshti-body__razom {
+    border: none;
+}
+/* Тёмная тема страницы "Енергозбереження" */
+.energosberejennya-body__number {
+    border: solid #CEECFF42 3px;
+    border-top-width: 0px;
+}
+html.dark .energosberejennya-body__name-zahid{
+    border: solid #CEECFF42 3px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 0px;
+}
+html.dark .energosberejennya-body__period-vikonanya {
+    border: solid #CEECFF42 3px;
+    border-top-width: 0px;
+}
+
+/* проверить нужна ли вообще светлая тема */
+
 /* Светлая тема */
 html.light .page__theme:hover {
 }
@@ -2463,3 +2964,6 @@ html.light .page__theme {
 .availability__open {
 }
 /* конец - Доступности */
+
+
+

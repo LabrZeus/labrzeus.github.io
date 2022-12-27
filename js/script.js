@@ -191,8 +191,6 @@ function popupClose(popupActive, doUnlock = true) {
     }
 }
 
-// обратить внимание что в хтмл коде поАп не в зоне врапера который указывается ниже
-// попробовать его заменить другим именем и включить его в хтмл - дёргает фоновую страницу при открытии поАпа, возможно из-за этого
 function bodyLock() {
     const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
 
@@ -210,6 +208,7 @@ function bodyLock() {
         unlock = true;
     }, timeout);
 }
+
 
 function bodyUnlock() {
     setTimeout(function () {
@@ -236,7 +235,32 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-// дописать полифилы под старые браузеры с видеоурока
+(function () {
+	// проверяем поддержку
+	if (!Element.prototype.closest) {
+		// реализуем
+		Element.prototype.closest = function (css) {
+			var node = this;
+			while (node) {
+				if (node.matches(css)) return node;
+				else node = node.parentElement;
+			}
+			return null;
+		};
+	}
+})();
+(function () {
+	// проверяем поддержку
+	if (!Element.prototype.matches) {
+		// определяем свойство
+		Element.prototype.matches = Element.prototype.matchesSelector ||
+			Element.prototype.webkitMatchesSelector ||
+			Element.prototype.mozMatchesSelector ||
+			Element.prototype.msMatchesSelector;
+	}
+})();
+
+
 // The end - Popup
 // **************************************
 
@@ -328,14 +352,14 @@ for(let i = 0; i < collOtherPages.length; i++) {
 
 
 
-// Поменять стиль кнопки, с которой выпадает вложенный список на странице "Контакты"
+// Поменять стиль кнопки, с которой выпадает вложенный список на странице
 let item = document.getElementsByClassName("collapsible__other-pages");
 for(let i = 0; i < item.length; i++) {
     item[i].addEventListener('click', function() {
         this.classList.toggle('change__style-button');
     })
 }
-// Конец смены стиля кнопки, с которой выпадает вложенный список на странице "Контакты"
+// Конец смены стиля кнопки, с которой выпадает вложенный список на странице
 // **************************************
 
 
@@ -351,17 +375,6 @@ for(let i = 0; i < itemInPopup.length; i++) {
 // **************************************
 
 
-
-// Развернуть стрелку во кнопке выпадающего списка
-// let arrow = document.getElementsByClassName("arrow__bottom");
-// for(let i = 0; i < arrow.length; i++) {
-//     arrow[i].addEventListener('click', function() {
-//         // this.classList.add('arrow__top');
-//         this.classList += " arrow__top";
-//     })
-// }
-// Конец смены положения стрелки в кнопке выпадающего спсика
-// **************************************
 
 
 
@@ -431,7 +444,25 @@ function windowLoad() {
 
 }
 
-
-
 // Конец - Тёмная/светлая тема
+// **************************************
+
+
+
+
+
+// Новости
+// **************************************
+// const newsContainer = document.querySelectorAll('.novini-block')
+// console.log(newsContainer)
+
+let newsContainer = document.getElementsByClassName("novini-block");
+for(let i = 0; i < newsContainer.length; i++) {
+    newsContainer[i].addEventListener('click', function() {
+        this.classList.toggle('open-news');
+    })
+}
+
+console.log(newsContainer)
+// Конец - новости
 // **************************************
