@@ -2500,6 +2500,20 @@ las-child не работает во всех случаях */
     margin-top: 30px;
 }
 
+/* Сторінка "Про нас" */
+.container__pdf-touch {
+    display: none;
+}
+/* adaptive Про нас */
+@media (max-width: 1200px) {
+    .container__pdf-pc {
+        display: none;
+    }
+    .container__pdf-touch {
+        display: block;
+    }
+}
+
 
 /* Сторінка "Для нового споживача" */
 .container-block__step {
